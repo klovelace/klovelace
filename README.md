@@ -29,6 +29,7 @@ I build data science functions that make the rest of the organization smarter �
 | [**Marketing Incrementality & LTV Dashboard**](https://glyphanalytics.com/portfolio/marketing_ds_dashboard.html) | Geo holdout, PSM, ITS, gradient boosting LTV | Python, Chart.js, HTML/CSS |
 | [**Stripe Growth Analytics — Journey Dashboard**](https://glyphanalytics.com/portfolio/stripe_journey_dashboard.html) | Conversion funnel, A/B testing, propensity score matching | Python, SQL, Tableau |
 | [**Netflix AI Eval — Ops Health Dashboard**](https://klovelace.github.io/AssessorWorkflow/netflix-ai-eval-portfolio/artifact-3-eval-ops-health/index.html) | Rater calibration, scoring rubric design, eval ops metrics | HTML/CSS, Chart.js |
+| [**Reddit Consumer Growth and Experimentation Dashboard**](https://glyphanalytics.com/HumanEval/reddit_consumer_ds_dashboard.html) | Retention by Cohort,Experiment DAU lift, Aquisition Funnel Analysis, Opportunity Sizing | HTML/CSS, Chart.js |
 
 ---
 
