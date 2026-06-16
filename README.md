@@ -53,4 +53,4 @@ AI & productivity  Claude · Cursor · GitHub Copilot
 
 ---
 
-📍 Washington, DC &nbsp;·&nbsp; 📧 klovelace@gmail.com &nbsp;·&nbsp; 🌐 [glyphanalytics.com](https://glyphanalytics.com/HumanEval/)
+📍 Atlanta, GA &nbsp;·&nbsp; 📧  &nbsp;·&nbsp; 🌐 [glyphanalytics.com](https://glyphanalytics.com/HumanEval/)
