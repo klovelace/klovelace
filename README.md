@@ -12,6 +12,7 @@ I am the founder of [Glyph Analytics](https://glyphanalytics.com/). Before that,
 | --- | --- | --- |
 | **[Practice Mark](https://github.com/klovelace/practice-mark)** | Designed and shipped a Chrome extension that turns YouTube lessons into a hands-free practice workflow with marks, looping, playback controls, and optional speech recognition. | Shipped, unlisted beta |
 | **[AI Evaluation Operations](https://github.com/klovelace/AssessorWorkflow)** | A three-part interactive prototype for rubric-based AI content assessment, rater calibration, and evaluation-operations monitoring. [Explore the three demos](https://github.com/klovelace/AssessorWorkflow/tree/main/netflix-ai-eval-portfolio). | Portfolio prototype; illustrative data |
+| **[Geospatial ML: Geographic Transfer Validation](projects/spatial-validation/README.md)** | Built a 23-county GIS and spatial-ML validation workflow with frozen temporal and whole-county holdouts, observer-effort correction, and a proximity-only null; reports positive, uncertain, and contrary results. [Workflow](projects/spatial-validation/assets/workflow.svg) · [Results graphic](projects/spatial-validation/assets/transfer-effects.svg). | Completed research case study; unpublished |
 | **[Monitoring Tools Compendium](https://github.com/klovelace/MonitoringTools)** | A curated historical reference collection of monitoring frameworks, indicator resources, and assessment instruments spanning international development domains. | Reference resource |
 
 ## Selected analytical demonstrations
