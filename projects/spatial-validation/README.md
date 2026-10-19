@@ -9,7 +9,7 @@
 </tr>
 </table>
 
-## The decision problem
+## 01 · The problem: ecological signal or observer geography?
 
 Citizen-science plant observations are not random samples of the landscape. Records cluster where people can travel and where botanists choose to look. A habitat model can therefore seem accurate simply by remembering the geography of previous observations. This project asked a more demanding question:
 
@@ -17,51 +17,14 @@ Citizen-science plant observations are not random samples of the landscape. Reco
 
 The case study summarizes completed research analyses, not a hosted prediction product or a validated field-survey locator.
 
-## Study design
 
-- **Study area:** 23 Western North Carolina counties on an EPSG:5070, 60 m analysis grid.
-- **Target species:** bloodroot (*Sanguinaria canadensis*), mayapple (*Podophyllum peltatum*), and black cohosh (*Actaea racemosa*).
-- **Occurrence audit:** research-grade iNaturalist observations, wild/noncaptive, publicly georeferenced, stated positional accuracy above zero and no more than 100 m, de-duplicated and thinned to one record per 100 m cell.
-- **Temporal split:** observations through December 31, 2021 for training; January 1, 2022 through September 15, 2026 for future testing.
-- **Independent future test:** observations at least 1 km from every historical focal-species occurrence.
-- **Geographic holdouts:** remove every historical target occurrence from the test county and train only on other counties; background also excludes the withheld county.
-- **Primary scope:** counties meeting the prespecified threshold of at least 15 eligible future observations.
+## 02 · The method: correct observation bias without inventing negatives
 
-### GIS and predictor pipeline
+The principal modeling innovation is to change **which available locations enter the background sample**, not to manually weight predictor importance. Historical observer visits provide a proxy for where plants were more likely to be looked for. The method contrasts uniform forest background with effort-aware background under otherwise frozen model settings.
 
-| Input | Derived information |
-| --- | --- |
-| USGS 3DEP elevation | Elevation, slope, directional aspect, TPI, wetness, drainage distance, and heat load |
-| NLCD 2021 | Forest analysis mask and tree-canopy percentage |
-| PRISM 1991–2020 normals | July maximum temperature and growing-season precipitation |
-| USDA NRCS SSURGO | Soil pH and available-water capacity, prespecified secondary sensitivity extension |
-| iNaturalist plant observations | Target-species presences and spring botanist-observation-effort proxy |
-
-The frozen **Core-12** predictor set was elevation, slope, northness, eastness, approximately 300 m and 900 m TPI, TWI, distance to drainage, canopy cover, July maximum temperature, April–October precipitation, and McCune–Keon heat load.
-
-The 60 m grid supports **regional ranking**, not fine-scale habitat suitability or exact plant location guidance. Underlying PRISM and soil datasets have coarser measurement support. The habitat scores are **presence/background discrimination scores, not calibrated occupancy probabilities**.
-
-## The methodological innovations
-
-The strongest contribution is a **falsifiable geographic-transfer test**, not a suitability map. These original, editable diagrams illustrate the actual frozen design; they are explanatory schematics, not new model runs.
-
-### 1. Observer effort changes the background distribution
+### Observer-effort-aware background sampling
 
 <table><tr><td width="52%" valign="top"><img src="assets/effort-background.svg" alt="Diagram comparing uniform and observer-effort background sampling, with identical random forest settings" width="100%"></td><td valign="top"><strong>What changes?</strong><br><br>Positive observations and model settings stay fixed. The comparison varies how negative/background locations are sampled: uniformly from eligible forest or near recorded spring botanist visits, with 1 km jitter and a 5% uniform component.<br><br><strong>Why?</strong><br><br>Presence-only data can reflect observer accessibility and search behavior as much as ecology. This is background-sampling correction, <em>not</em> manually assigning weights to environmental features.</td></tr></table>
-
-### 2. A geographic-memory null makes leakage testable
-
-<table><tr><td width="52%" valign="top"><img src="assets/distance-null.svg" alt="Four-step diagram of frozen training, independent future observations, distance-only baseline, and county-level comparison" width="100%"></td><td valign="top"><strong>The challenge</strong><br><br>A baseline ranks the landscape solely by proximity to historical occurrences. It has no environmental predictors. Environmental models must improve on this benchmark for later observations in completely withheld counties.<br><br><strong>Why it matters</strong><br><br>Random train/test splits can reward spatial autocorrelation. The combination of whole-county holdouts, later observations, and a 1 km historical-occurrence exclusion makes geographic memorization less persuasive.</td></tr></table>
-
-### 3. Freeze the replication before seeing the results
-
-<table><tr><td width="52%" valign="top"><img src="assets/frozen-replication.svg" alt="Diagram of frozen predictors and hyperparameters, replication threshold, and both successful and failed outcomes" width="100%"></td><td valign="top"><strong>Prespecified success criterion</strong><br><br>The effort-aware RF must exceed the distance-only null on the county-balanced primary endpoint, with the lower bound of the 95% county-bootstrap interval above zero.<br><br><strong>Observed outcomes</strong><br><br>Mayapple replicated the bloodroot transfer advantage. Black cohosh did not replicate in its sole qualifying county, which is a descriptive counterexample rather than a generalizable species-wide estimate.</td></tr></table>
-
-### 4. Read the county maps correctly
-
-The original QGIS exports supplied with the study show **county median future-record landscape percentiles**, not model probability surfaces or locations of plants. Bloodroot had 11 qualifying held-out counties; black cohosh had one (Buncombe County, 17 independent future observations, median approximately 0.38). The contrasting maps illustrate heterogeneity and the limits of replication, but **do not independently establish that observer-effort correction caused improved prediction**.
-
-The maps were generated from the shared 60 m regional predictor stack, distinct from the separate 10 m-terrain v3 screening workflow. Original regional maps and accompanying source notes remain outside this repository pending image publication and metadata review.
 
 ## Models and validation
 
@@ -75,7 +38,17 @@ Each random forest used 500 trees, minimum leaf size 5, square-root feature sele
 
 **Primary estimand:** the *county-balanced mean of county-median future-observation landscape percentiles*. Each held-out county contributes equally. Uncertainty for multi-county comparisons comes from 20,000 county-level bootstrap resamples, not bootstrap resampling of individual records.
 
-## Results
+
+## 03 · The challenge: beat a geographic-memory null
+
+A model can look predictive by learning proximity to prior records. Here, the deliberately simple distance-only baseline makes that alternative explanation testable, while whole-county withholding and later observations raise the bar for genuine geographic transfer.
+
+### Distance-only baseline and external holdout
+
+<table><tr><td width="52%" valign="top"><img src="assets/distance-null.svg" alt="Four-step diagram of frozen training, independent future observations, distance-only baseline, and county-level comparison" width="100%"></td><td valign="top"><strong>The challenge</strong><br><br>A baseline ranks the landscape solely by proximity to historical occurrences. It has no environmental predictors. Environmental models must improve on this benchmark for later observations in completely withheld counties.<br><br><strong>Why it matters</strong><br><br>Random train/test splits can reward spatial autocorrelation. The combination of whole-county holdouts, later observations, and a 1 km historical-occurrence exclusion makes geographic memorization less persuasive.</td></tr></table>
+
+
+## 04 · Measured results: transferable signal, with uncertainty
 
 <table>
 <tr>
@@ -98,7 +71,25 @@ Each random forest used 500 trees, minimum leaf size 5, square-root feature sele
 
 For bloodroot, the effort-aware model captured 32.6% of future observations in the highest-ranking 10% of eligible reference landscape; mayapple captured 15.0%. Generalized ranking skill and top-decile concentration are different claims.
 
-## Why the validation design matters
+
+## 05 · Replication failure and what it teaches
+
+The same frozen protocol was carried forward to additional species rather than redesigned around their observed outcomes. Mayapple replicated the primary geographic-transfer advantage; black cohosh did not in its only qualifying county. This contrast is a substantive research finding, not a defect to remove from the portfolio.
+
+### Prespecified replication protocol
+
+<table><tr><td width="52%" valign="top"><img src="assets/frozen-replication.svg" alt="Diagram of frozen predictors and hyperparameters, replication threshold, and both successful and failed outcomes" width="100%"></td><td valign="top"><strong>Prespecified success criterion</strong><br><br>The effort-aware RF must exceed the distance-only null on the county-balanced primary endpoint, with the lower bound of the 95% county-bootstrap interval above zero.<br><br><strong>Observed outcomes</strong><br><br>Mayapple replicated the bloodroot transfer advantage. Black cohosh did not replicate in its sole qualifying county, which is a descriptive counterexample rather than a generalizable species-wide estimate.</td></tr></table>
+
+
+## 06 · Limitations, evidence boundaries, and GIS exhibits
+
+### Scope, materials, and limitations
+
+This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four new map PNGs remain pending image review and upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
+
+Additional limitations include opportunistic observation bias, incomplete measurement of failed searches and observer-hours, species-by-geography variation, and a single-county black-cohosh contrast. Future evaluations should compare the original expert-weighted GIS model on these same frozen test sets and assess transfer into additional regions.
+
+### Why the validation design matters
 
 - A random train/test split can reward spatial autocorrelation.
 - Holding out later observations alone can reward proximity to historical sites.
@@ -107,7 +98,7 @@ For bloodroot, the effort-aware model captured 32.6% of future observations in t
 - County-level bootstrap avoids treating correlated records within one county as independent replications.
 - Frozen settings and published negative results resist selective reporting.
 
-## QGIS map exhibits: terrain, predictors, and held-out model validation
+### GIS supporting exhibits: terrain, predictors, and held-out model validation
 
 The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The exported map files are being reviewed before inclusion; the existing workflow and effects graphics above are already published.
 
@@ -124,11 +115,29 @@ The companion cartographic exports come from the **Western North Carolina enviro
 
 The terrain and environmental layers are shared analytical inputs. The county-level output maps summarize out-of-sample evaluation rather than fine-resolution survey priorities. They must not be confused with an independently calibrated habitat probability surface. The local export script, `scripts/export_bloodroot_cohosh_maps.py`, documents the QGIS rendering workflow but is not included in this public documentation repository.
 
-## Scope, materials, and limitations
+### Detailed study design and data provenance
 
-This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four new map PNGs remain pending image review and upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
+- **Study area:** 23 Western North Carolina counties on an EPSG:5070, 60 m analysis grid.
+- **Target species:** bloodroot (*Sanguinaria canadensis*), mayapple (*Podophyllum peltatum*), and black cohosh (*Actaea racemosa*).
+- **Occurrence audit:** research-grade iNaturalist observations, wild/noncaptive, publicly georeferenced, stated positional accuracy above zero and no more than 100 m, de-duplicated and thinned to one record per 100 m cell.
+- **Temporal split:** observations through December 31, 2021 for training; January 1, 2022 through September 15, 2026 for future testing.
+- **Independent future test:** observations at least 1 km from every historical focal-species occurrence.
+- **Geographic holdouts:** remove every historical target occurrence from the test county and train only on other counties; background also excludes the withheld county.
+- **Primary scope:** counties meeting the prespecified threshold of at least 15 eligible future observations.
 
-Additional limitations include opportunistic observation bias, incomplete measurement of failed searches and observer-hours, species-by-geography variation, and a single-county black-cohosh contrast. Future evaluations should compare the original expert-weighted GIS model on these same frozen test sets and assess transfer into additional regions.
+### GIS and predictor pipeline
+
+| Input | Derived information |
+| --- | --- |
+| USGS 3DEP elevation | Elevation, slope, directional aspect, TPI, wetness, drainage distance, and heat load |
+| NLCD 2021 | Forest analysis mask and tree-canopy percentage |
+| PRISM 1991–2020 normals | July maximum temperature and growing-season precipitation |
+| USDA NRCS SSURGO | Soil pH and available-water capacity, prespecified secondary sensitivity extension |
+| iNaturalist plant observations | Target-species presences and spring botanist-observation-effort proxy |
+
+The frozen **Core-12** predictor set was elevation, slope, northness, eastness, approximately 300 m and 900 m TPI, TWI, distance to drainage, canopy cover, July maximum temperature, April–October precipitation, and McCune–Keon heat load.
+
+The 60 m grid supports **regional ranking**, not fine-scale habitat suitability or exact plant location guidance. Underlying PRISM and soil datasets have coarser measurement support. The habitat scores are **presence/background discrimination scores, not calibrated occupancy probabilities**.
 
 ## Selected public data sources
 
