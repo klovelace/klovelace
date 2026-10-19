@@ -85,7 +85,7 @@ The same frozen protocol was carried forward to additional species rather than r
 
 ### Scope, materials, and limitations
 
-This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four new map PNGs remain pending image review and upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
+This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four approved map PNGs remain pending binary upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
 
 Additional limitations include opportunistic observation bias, incomplete measurement of failed searches and observer-hours, species-by-geography variation, and a single-county black-cohosh contrast. Future evaluations should compare the original expert-weighted GIS model on these same frozen test sets and assess transfer into additional regions.
 
@@ -100,7 +100,7 @@ Additional limitations include opportunistic observation bias, incomplete measur
 
 ### GIS supporting exhibits: terrain, predictors, and held-out model validation
 
-The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The exported map files are being reviewed before inclusion; the existing workflow and effects graphics above are already published.
+The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The four map exhibits have been approved by the project owner for public release. Their source PNGs are prepared for upload to this repository; the existing workflow and effects graphics are already published.
 
 | Map exhibit | What it shows | Reading the evidence |
 | --- | --- | --- |
@@ -147,6 +147,6 @@ The 60 m grid supports **regional ranking**, not fine-scale habitat suitability 
 - [USDA NRCS SSURGO](https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo)
 - [iNaturalist](https://www.inaturalist.org/)
 
-**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are not yet published, pending visual and metadata review. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
+**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are approved for publication and prepared, but are not yet uploaded to this repository. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
 
 [Back to portfolio](../../README.md)
