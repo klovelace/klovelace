@@ -41,6 +41,28 @@ The frozen **Core-12** predictor set was elevation, slope, northness, eastness, 
 
 The 60 m grid supports **regional ranking**, not fine-scale habitat suitability or exact plant location guidance. Underlying PRISM and soil datasets have coarser measurement support. The habitat scores are **presence/background discrimination scores, not calibrated occupancy probabilities**.
 
+## The methodological innovations
+
+The strongest contribution is a **falsifiable geographic-transfer test**, not a suitability map. These original, editable diagrams illustrate the actual frozen design; they are explanatory schematics, not new model runs.
+
+### 1. Observer effort changes the background distribution
+
+<table><tr><td width="52%" valign="top"><img src="assets/effort-background.svg" alt="Diagram comparing uniform and observer-effort background sampling, with identical random forest settings" width="100%"></td><td valign="top"><strong>What changes?</strong><br><br>Positive observations and model settings stay fixed. The comparison varies how negative/background locations are sampled: uniformly from eligible forest or near recorded spring botanist visits, with 1 km jitter and a 5% uniform component.<br><br><strong>Why?</strong><br><br>Presence-only data can reflect observer accessibility and search behavior as much as ecology. This is background-sampling correction, <em>not</em> manually assigning weights to environmental features.</td></tr></table>
+
+### 2. A geographic-memory null makes leakage testable
+
+<table><tr><td width="52%" valign="top"><img src="assets/distance-null.svg" alt="Four-step diagram of frozen training, independent future observations, distance-only baseline, and county-level comparison" width="100%"></td><td valign="top"><strong>The challenge</strong><br><br>A baseline ranks the landscape solely by proximity to historical occurrences. It has no environmental predictors. Environmental models must improve on this benchmark for later observations in completely withheld counties.<br><br><strong>Why it matters</strong><br><br>Random train/test splits can reward spatial autocorrelation. The combination of whole-county holdouts, later observations, and a 1 km historical-occurrence exclusion makes geographic memorization less persuasive.</td></tr></table>
+
+### 3. Freeze the replication before seeing the results
+
+<table><tr><td width="52%" valign="top"><img src="assets/frozen-replication.svg" alt="Diagram of frozen predictors and hyperparameters, replication threshold, and both successful and failed outcomes" width="100%"></td><td valign="top"><strong>Prespecified success criterion</strong><br><br>The effort-aware RF must exceed the distance-only null on the county-balanced primary endpoint, with the lower bound of the 95% county-bootstrap interval above zero.<br><br><strong>Observed outcomes</strong><br><br>Mayapple replicated the bloodroot transfer advantage. Black cohosh did not replicate in its sole qualifying county, which is a descriptive counterexample rather than a generalizable species-wide estimate.</td></tr></table>
+
+### 4. Read the county maps correctly
+
+The original QGIS exports supplied with the study show **county median future-record landscape percentiles**, not model probability surfaces or locations of plants. Bloodroot had 11 qualifying held-out counties; black cohosh had one (Buncombe County, 17 independent future observations, median approximately 0.38). The contrasting maps illustrate heterogeneity and the limits of replication, but **do not independently establish that observer-effort correction caused improved prediction**.
+
+The maps were generated from the shared 60 m regional predictor stack, distinct from the separate 10 m-terrain v3 screening workflow. Original regional maps and accompanying source notes remain outside this repository pending image publication and metadata review.
+
 ## Models and validation
 
 Three prespecified approaches were compared:
