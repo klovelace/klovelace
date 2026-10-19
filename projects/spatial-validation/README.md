@@ -147,6 +147,6 @@ The 60 m grid supports **regional ranking**, not fine-scale habitat suitability 
 - [USDA NRCS SSURGO](https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo)
 - [iNaturalist](https://www.inaturalist.org/)
 
-**Status:** Independent, unpublished research case study. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
+**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are not yet published, pending visual and metadata review. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
 
 [Back to portfolio](../../README.md)
