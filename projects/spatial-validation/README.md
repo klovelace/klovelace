@@ -75,15 +75,17 @@ For bloodroot, the effort-aware model captured 32.6% of future observations in t
 - County-level bootstrap avoids treating correlated records within one county as independent replications.
 - Frozen settings and published negative results resist selective reporting.
 
-## Companion QGIS workflow: experimental ginseng survey screening
+## Companion QGIS workflow: experimental landscape screening
 
-Separate from the frozen 60 m regional random-forest validation above, a styled **v3 QGIS project** provides a local-scale ginseng survey-screening workflow. Its map exports document three stages:
+A separate, locally developed **v3 QGIS workflow** illustrates how terrain, environmental covariates, and screening rules can be assembled into a transparent ecological decision-support process. It is distinct from the frozen **60 m regional random-forest validation** above.
 
-1. **Terrain:** slope derived from a saved 10 m terrain raster, illustrating local topographic variation.
-2. **Environmental factor layers:** canopy, soils, hydrology, and climate represented as individual **0–1 factor scores** for inspection and combination.
-3. **Screened survey priorities:** a resulting **0–100 ginseng survey-priority index** identifying places meriting further ecological investigation within the analysis mask.
+The workflow has three stages:
 
-**Important distinction:** The ginseng index is an **experimental ecological survey-priority score**, not a calibrated probability of ginseng occurrence, a field-validated prediction, or a result of the independent bloodroot/mayapple county-holdout validation. Its resolution does not imply that every environmental source was observed at 10 m resolution. These graphics illustrate the QGIS screening workflow, rather than demonstrate predictive validity.
+1. **Terrain characterization:** a slope surface derived from a saved **10 m** terrain grid reveals local landform structure.
+2. **Environmental inputs:** canopy, soils, moisture/hydrology, and climate are represented as **0–1 factor scores** for comparison and review.
+3. **Survey prioritization:** screened factors are combined into an experimental **0–100 relative site-priority index**.
+
+**Interpretation and sharing limits:** This is an **experimental ecological screening index**, not a calibrated probability, a field-validated prediction, or an output of the independent bloodroot/mayapple county-holdout tests. Fine-scale mapped priorities and identifying study-area details are intentionally not published, because they could guide searches for a sensitive resource. The 10 m analysis grid also does not imply 10 m source resolution for every environmental factor.
 
 ## Scope, materials, and limitations
 
