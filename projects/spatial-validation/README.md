@@ -85,31 +85,26 @@ For bloodroot, the effort-aware model captured 32.6% of future observations in t
 - County-level bootstrap avoids treating correlated records within one county as independent replications.
 - Frozen settings and published negative results resist selective reporting.
 
-## Companion QGIS workflow: experimental landscape screening
+## QGIS map exhibits: terrain, predictors, and held-out model validation
 
-**Visual asset status:** Three map exports have been generated locally from the v3 QGIS project, but are not yet available as reviewed, public-safe image files in this repository. They will be added only after geographic extents, map labels, coordinates, legends, and metadata have been screened for sensitive-site disclosure. No map is being recreated from invented data.
+The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The exported map files are being reviewed before inclusion; the existing workflow and effects graphics above are already published.
 
-| Visual | What it demonstrates | Release requirement |
+| Map exhibit | What it shows | Reading the evidence |
 | --- | --- | --- |
-| Terrain layers | Slope and landform characterization from the saved 10 m terrain layer | Generalized or non-identifying extent |
-| Environmental predictors | Canopy, soils, hydrology, and climate factor scores on a 0–1 scale | No sensitive target-species references or coordinates |
-| Model survey-priority index | Experimental relative 0–100 screening score | Avoid precise locations and any probability or field-validation claim |
+| **Terrain layers** | Shared Western North Carolina elevation and slope layers. | Environmental context and topographic structure, not a species occurrence map. |
+| **Environmental predictors** | Canopy, topographic wetness, July maximum temperature, and growing-season precipitation. | Predictor surfaces on their respective measurement scales, not field-observed species presence. |
+| **Bloodroot held-out model output** | County-level median future-record landscape percentiles across **11 held-out counties**, with **288 qualifying future observations** in the combined confirmatory analysis. | Evidence of geographic transfer from future observations excluded by county and time; not a pixel-level occupancy probability. |
+| **Black cohosh held-out model output** | **Buncombe County only**, the sole qualifying county, with **17 qualifying future test records**. | The **frozen replication criterion was not met**. The one-county finding is descriptive, not a species-wide transfer estimate. |
 
+### How to interpret these maps
 
+**Map scores represent the median landscape percentile assigned to future observation records within a held-out county**, calculated against the eligible reference landscape. They are **not calibrated occupancy probabilities**, ground-truth presence/absence maps, predicted plant counts, or field-validated occurrence locations. The maps are intended to show county-level summary statistics only, **without plant occurrence coordinates**. The images will be checked for visible and embedded spatial identifiers before public release.
 
-A separate, locally developed **v3 QGIS workflow** illustrates how terrain, environmental covariates, and screening rules can be assembled into a transparent ecological decision-support process. It is distinct from the frozen **60 m regional random-forest validation** above.
-
-The workflow has three stages:
-
-1. **Terrain characterization:** a slope surface derived from a saved **10 m** terrain grid reveals local landform structure.
-2. **Environmental inputs:** canopy, soils, moisture/hydrology, and climate are represented as **0–1 factor scores** for comparison and review.
-3. **Survey prioritization:** screened factors are combined into an experimental **0–100 relative site-priority index**.
-
-**Interpretation and sharing limits:** This is an **experimental ecological screening index**, not a calibrated probability, a field-validated prediction, or an output of the independent bloodroot/mayapple county-holdout tests. Fine-scale mapped priorities and identifying study-area details are intentionally not published, because they could guide searches for a sensitive resource. The 10 m analysis grid also does not imply 10 m source resolution for every environmental factor.
+The terrain and environmental layers are shared analytical inputs. The county-level output maps summarize out-of-sample evaluation rather than fine-resolution survey priorities. They must not be confused with an independently calibrated habitat probability surface. The local export script, `scripts/export_bloodroot_cohosh_maps.py`, documents the QGIS rendering workflow but is not included in this public documentation repository.
 
 ## Scope, materials, and limitations
 
-This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
+This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four new map PNGs remain pending image review and upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
 
 Additional limitations include opportunistic observation bias, incomplete measurement of failed searches and observer-hours, species-by-geography variation, and a single-county black-cohosh contrast. Future evaluations should compare the original expert-weighted GIS model on these same frozen test sets and assess transfer into additional regions.
 
