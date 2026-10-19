@@ -85,7 +85,7 @@ The same frozen protocol was carried forward to additional species rather than r
 
 ### Scope, materials, and limitations
 
-This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**; the four approved map PNGs remain pending binary upload. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
+This folder is a **public aggregate research write-up with editable SVG methods diagrams and four original QGIS map PNGs**. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
 
 Additional limitations include opportunistic observation bias, incomplete measurement of failed searches and observer-hours, species-by-geography variation, and a single-county black-cohosh contrast. Future evaluations should compare the original expert-weighted GIS model on these same frozen test sets and assess transfer into additional regions.
 
@@ -100,7 +100,7 @@ Additional limitations include opportunistic observation bias, incomplete measur
 
 ### GIS supporting exhibits: terrain, predictors, and held-out model validation
 
-The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The four map exhibits have been approved by the project owner for public release. Their source PNGs are prepared for upload to this repository; the existing workflow and effects graphics are already published.
+The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The four original map exhibits have been approved by the project owner and are now published in this repository, alongside the workflow and transfer-effect diagrams.
 
 | Map exhibit | What it shows | Reading the evidence |
 | --- | --- | --- |
@@ -109,9 +109,21 @@ The companion cartographic exports come from the **Western North Carolina enviro
 | **Bloodroot held-out model output** | County-level median future-record landscape percentiles across **11 held-out counties**, with **288 qualifying future observations** in the combined confirmatory analysis. | Evidence of geographic transfer from future observations excluded by county and time; not a pixel-level occupancy probability. |
 | **Black cohosh held-out model output** | **Buncombe County only**, the sole qualifying county, with **17 qualifying future test records**. | The **frozen replication criterion was not met**. The one-county finding is descriptive, not a species-wide transfer estimate. |
 
+#### Regional predictor inputs: how the model sees the landscape
+
+<table><tr><td width="54%" valign="top"><img src="assets/terrain_layers.png" alt="Original QGIS maps of elevation and slope across the 23-county Western North Carolina study region" width="100%"></td><td valign="top"><strong>Terrain: elevation and slope</strong><br><br>Two inputs from the shared 60 m regional analysis grid. Terrain structure supports the environmental feature engineering, but by itself does not demonstrate predictive skill.<br><br><strong>Role:</strong> Explanatory variables in the spatial random forest, not species locations or a prediction map.</td></tr></table>
+
+<table><tr><td width="54%" valign="top"><img src="assets/environmental_predictors.png" alt="Original QGIS panels for canopy cover, topographic wetness index, July maximum temperature, and growing-season precipitation" width="100%"></td><td valign="top"><strong>Environmental covariates</strong><br><br>Canopy, wetness, summer temperature, and growing-season precipitation provide complementary ecological signals. The model learns from these surfaces and the other prespecified predictors.<br><br><strong>Role:</strong> Measured or derived predictors, not field-confirmed occurrences. Native source resolution varies despite the common 60 m grid.</td></tr></table>
+
+#### Held-out counties: what future observations actually tested
+
+<table><tr><td width="54%" valign="top"><img src="assets/bloodroot_model_output.png" alt="Original bloodroot county choropleth showing median future-observation landscape percentiles in 11 qualifying withheld counties" width="100%"></td><td valign="top"><strong>Bloodroot: heterogeneous but positive aggregate transfer</strong><br><br>Eleven qualifying held-out counties. The map displays the median rank of future observations within each county, with substantial between-county variation.<br><br>The county-balanced primary comparison favored the effort-aware random forest over the distance-only null by <strong>+0.158</strong> (95% county-bootstrap interval <strong>+0.030 to +0.280</strong>).<br><br><strong>Interpretation:</strong> Ranking evidence across withheld counties, not a plant-location map or calibrated probability.</td></tr></table>
+
+<table><tr><td width="54%" valign="top"><img src="assets/black_cohosh_model_output.png" alt="Original black cohosh county map showing only Buncombe County qualified, with median future-observation landscape percentile approximately 0.38" width="100%"></td><td valign="top"><strong>Black cohosh: a valuable failed replication</strong><br><br>Only Buncombe County met the independent-test threshold (17 records). Its effort-aware model median was approximately <strong>0.38</strong>, while the distance-only null scored <strong>0.72</strong>.<br><br><strong>Interpretation:</strong> The frozen replication criterion was not met. With only one qualifying county, this is a descriptive negative result, not a species-wide conclusion.</td></tr></table>
+
 ### How to interpret these maps
 
-**Map scores represent the median landscape percentile assigned to future observation records within a held-out county**, calculated against the eligible reference landscape. They are **not calibrated occupancy probabilities**, ground-truth presence/absence maps, predicted plant counts, or field-validated occurrence locations. The maps are intended to show county-level summary statistics only, **without plant occurrence coordinates**. The images will be checked for visible and embedded spatial identifiers before public release.
+**Map scores represent the median landscape percentile assigned to future observation records within a held-out county**, calculated against the eligible reference landscape. They are **not calibrated occupancy probabilities**, ground-truth presence/absence maps, predicted plant counts, or field-validated occurrence locations. The maps are intended to show county-level summary statistics only, **without plant occurrence coordinates**. The images show regional geographic context and county boundaries, but no individual plant occurrence coordinates.
 
 The terrain and environmental layers are shared analytical inputs. The county-level output maps summarize out-of-sample evaluation rather than fine-resolution survey priorities. They must not be confused with an independently calibrated habitat probability surface. The local export script, `scripts/export_bloodroot_cohosh_maps.py`, documents the QGIS rendering workflow but is not included in this public documentation repository.
 
@@ -147,6 +159,6 @@ The 60 m grid supports **regional ranking**, not fine-scale habitat suitability 
 - [USDA NRCS SSURGO](https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo)
 - [iNaturalist](https://www.inaturalist.org/)
 
-**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are approved for publication and prepared, but are not yet uploaded to this repository. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
+**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are published alongside the methodological figures. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
 
 [Back to portfolio](../../README.md)
