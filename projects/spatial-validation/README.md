@@ -1,8 +1,13 @@
-# Geographic transfer of forest-herb habitat models
+# GeoEvidence — Spatial Prediction & Geographic Transfer Validation
 
 **Research case study | Western North Carolina | GIS, spatial machine learning, and frozen external validation**
 
-![GIS research workflow](assets/workflow.svg)
+<table>
+<tr>
+<td width="53%" valign="top"><img src="assets/workflow.svg" alt="Actual geospatial research workflow: environmental data, occurrence audit, model comparison, and geographic holdout validation" width="100%"></td>
+<td valign="top"><strong>Research question</strong><br><br>Can a model trained on historical observations outside a county identify later observations in that withheld county, beyond what proximity to known observations can explain?<br><br><strong>Methods</strong><br>23-county analysis · temporal separation · whole-county holdouts · observer-effort adjustment · distance-only null<br><br><strong>Interpretation</strong><br>Regional ranking evidence, not calibrated occupancy probabilities or a field-validated locator.</td>
+</tr>
+</table>
 
 ## The decision problem
 
@@ -50,7 +55,12 @@ Each random forest used 500 trees, minimum leaf size 5, square-root feature sele
 
 ## Results
 
-![Measured environmental-model advantage over the distance-only null](assets/transfer-effects.svg)
+<table>
+<tr>
+<td width="53%" valign="top"><img src="assets/transfer-effects.svg" alt="Observed county-balanced transfer effects for three forest-herb models, including uncertainty and a contrary single-county result" width="100%"></td>
+<td valign="top"><strong>Measured results</strong><br><br>Effort-aware environmental models outperformed the geographic-memory baseline in two multi-county tests. A third, single-county case favored the distance-only model.<br><br><strong>Why it matters</strong><br>Spatial autocorrelation can make models appear effective when they are simply learning where observers have already looked. A frozen external validation design tests that shortcut.</td>
+</tr>
+</table>
 
 | Species | Qualifying counties | Future observations | Effort RF | Uniform RF | Distance null | Effort minus distance (95% county-bootstrap interval) |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
@@ -76,6 +86,16 @@ For bloodroot, the effort-aware model captured 32.6% of future observations in t
 - Frozen settings and published negative results resist selective reporting.
 
 ## Companion QGIS workflow: experimental landscape screening
+
+**Visual asset status:** Three map exports have been generated locally from the v3 QGIS project, but are not yet available as reviewed, public-safe image files in this repository. They will be added only after geographic extents, map labels, coordinates, legends, and metadata have been screened for sensitive-site disclosure. No map is being recreated from invented data.
+
+| Visual | What it demonstrates | Release requirement |
+| --- | --- | --- |
+| Terrain layers | Slope and landform characterization from the saved 10 m terrain layer | Generalized or non-identifying extent |
+| Environmental predictors | Canopy, soils, hydrology, and climate factor scores on a 0–1 scale | No sensitive target-species references or coordinates |
+| Model survey-priority index | Experimental relative 0–100 screening score | Avoid precise locations and any probability or field-validation claim |
+
+
 
 A separate, locally developed **v3 QGIS workflow** illustrates how terrain, environmental covariates, and screening rules can be assembled into a transparent ecological decision-support process. It is distinct from the frozen **60 m regional random-forest validation** above.
 
