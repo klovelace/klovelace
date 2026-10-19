@@ -1,40 +1,44 @@
-# GeoEvidence — visual release checklist
+# GeoEvidence | County-holdout GIS map release checklist
 
-## Editorial direction
+## Visual direction
 
-Use the GitHub portfolio's established **actual visual on the left, short interpretation on the right** layout. Do not use stock maps, invented spatial patterns, or simulated model scores.
+Use the portfolio's existing **visual on the left, short interpretation on the right** layout. Do not fabricate maps, interpolate pixels, or treat model evaluation percentiles as occupancy probabilities. The source files were created locally through a reproducible **QGIS 4.2** export workflow: `scripts/export_bloodroot_cohosh_maps.py`.
 
-## Assets to review
+The intended image files are currently **not present in the public repository**. Add the images and replace the status below only after inspecting the actual exported pixels.
 
-These files were previously exported from the local v3 QGIS project, but are **not included in this repository**:
+## Four expected exports
 
-| Expected filename | Source/meaning | Safe caption |
-| --- | --- | --- |
-| `terrain_layers.png` | Slope from saved 10 m terrain layer | “Terrain characterization from the research GIS workflow. The grid resolution does not establish the native resolution of every input.” |
-| `environmental_predictors.png` | Canopy, soil, hydrology, and climate factor scores (0–1) | “Environmental screening factors standardized for comparison and review.” |
-| `model_suitability.png` | Experimental screened relative index (0–100) | “Relative ecological survey-priority index. Not a calibrated probability or field-validated prediction.” |
+| Filename | Map content | Concise public caption | Suggested alt text |
+| --- | --- | --- | --- |
+| `terrain_layers.png` | Shared WNC elevation and slope layers | **Terrain context.** Elevation and slope surfaces used to characterize Western North Carolina's landforms. | "Maps showing Western North Carolina elevation and slope layers used in the spatial modeling workflow." |
+| `environmental_predictors.png` | Canopy, topographic wetness, July maximum temperature, and growing-season precipitation | **Environmental predictors.** Selected canopy, terrain moisture, and climate covariates in the regional modeling stack. | "Maps of Western North Carolina canopy, topographic wetness, July maximum temperature, and growing-season precipitation predictors." |
+| `bloodroot_model_output.png` | County-level held-out bloodroot model summary for 11 qualifying counties | **Bloodroot geographic transfer.** Median future-observation landscape percentiles across 11 county holdouts; scores are rankings, not occupancy probabilities. | "County-level held-out evaluation map for bloodroot across 11 Western North Carolina counties, summarizing future-record landscape percentiles without individual occurrence locations." |
+| `black_cohosh_model_output.png` | Buncombe-only black cohosh holdout with 17 future test records | **Black cohosh limitation.** Buncombe was the only qualifying holdout (17 future observations); the frozen replication criterion was not met. | "Buncombe County-only held-out black cohosh evaluation map with 17 qualifying future observations; the prespecified replication criterion was not met." |
 
-## Mandatory review before publishing
+These descriptions reflect the requested exports, **not verified visual inspection of files that are not yet accessible in the repository**. Confirm labels, panel order, ranges, and contents against the PNGs before publication.
 
-- [ ] Remove the sensitive target-species name and its synonyms from map labels, legends, filenames, metadata, and captions.
-- [ ] Ensure coordinates, detailed geographic labels, identifiable landmarks, and fine-scale extents cannot reveal survey targets.
-- [ ] If the priority surface remains spatially actionable, publish a generalized, blurred, cropped, or non-geolocated version instead of the original.
-- [ ] Review EXIF and embedded metadata, not just visible text.
-- [ ] Confirm the terrain, predictor, and screening maps are correctly attributed to the separate **v3 QGIS workflow**, not the **60 m county-holdout random-forest study**.
-- [ ] Keep scores described as relative rankings; do not claim calibrated occupancy probabilities, field validation, or exact plant locations.
-- [ ] Review copyright and dataset-attribution requirements.
-- [ ] Have the project owner approve each export for public release.
+## Validation boundary
 
-## Proposed placement
+- County-level map values are the **median future-record percentiles from held-out tests** compared with the eligible reference landscape. They are **not occupancy probabilities**.
+- Bloodroot: **11 county holdouts**, **288 qualifying future observations** in the documented confirmatory analysis; the effort-aware random forest exceeded the distance-only null in the county-balanced primary metric (**+0.158**, 95% county-bootstrap interval **+0.030 to +0.280**).
+- Black cohosh: **Buncombe only**, **17 qualifying future observations**. Distance-only outperformed the environmental models there, and the frozen replication criterion was not met. Do not present this as successful multi-county replication or a meaningful one-county bootstrap interval.
+- Never overlay raw plant occurrence coordinates or imply that a map pixel marks a confirmed plant location.
+- Terrain and environmental predictors are **input maps**; county-level percentile summaries are **holdout evaluation maps**. Distinguish these clearly.
+- The related regional analysis used a **60 m** harmonized model grid and predictors with different source resolutions. Do not claim uniform measurement support or field-scale resolution for all inputs.
 
-1. **Research pipeline:** current `assets/workflow.svg` beside the study design.
-2. **Out-of-sample evidence:** current `assets/transfer-effects.svg` beside the holdout findings.
-3. **GIS workflow:** three reviewed images in a compact gallery with the captions above, followed by the methodological separation note.
+## Before committing files
 
-## How to supply images
+- [ ] Review all four PNGs visually for correct extent, clipping, readable text, legends, accurate labels, and scientific meaning.
+- [ ] Confirm the maps show **no individual plant observation coordinates**, markers, identifying records, or other sensitive location information.
+- [ ] Review PNG metadata and ancillary text, including authoring/export paths.
+- [ ] Ensure no legacy sensitive-target maps or labels are accidentally included.
+- [ ] Check that bloodroot has 11 qualifying counties, while the black-cohosh exhibit shows Buncombe only and clearly describes the failed criterion.
+- [ ] Ensure that county-level percentile color scales and legends do **not** imply occurrence probability.
+- [ ] Check source attributions and project ownership for public distribution.
+- [ ] Verify the export README and QGIS 4.2 script are consistent with the captions.
+- [ ] Commit the four PNGs under `projects/spatial-validation/assets/`, embed each with descriptive alt text, and confirm the GitHub README renders without broken images.
+- [ ] Refresh the profile teaser to show one of the actual verified map assets once committed.
 
-Upload the three PNGs to the conversation. If any includes precise spatial clues, also supply generalized or cropped alternatives. They will not be committed until disclosure review is complete.
+## Source and publication status
 
-## Methodological boundary
-
-The frozen regional validation uses 60 m analysis cells, county-level holdouts, and independently observed future records. The v3 QGIS screening workflow uses a saved 10 m terrain grid and a separate experimental 0–100 relative index. They are complementary examples of research engineering, **not the same trained or validated model**.
+The local working export folder is `reports/portfolio_maps/`. Neither that Windows folder nor its four map files can be inferred from the current GitHub repository's contents. The map gallery should stay unlinked until all four actual binary assets are accessible and verified.
