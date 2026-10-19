@@ -75,6 +75,16 @@ For bloodroot, the effort-aware model captured 32.6% of future observations in t
 - County-level bootstrap avoids treating correlated records within one county as independent replications.
 - Frozen settings and published negative results resist selective reporting.
 
+## Companion QGIS workflow: experimental ginseng survey screening
+
+Separate from the frozen 60 m regional random-forest validation above, a styled **v3 QGIS project** provides a local-scale ginseng survey-screening workflow. Its map exports document three stages:
+
+1. **Terrain:** slope derived from a saved 10 m terrain raster, illustrating local topographic variation.
+2. **Environmental factor layers:** canopy, soils, hydrology, and climate represented as individual **0–1 factor scores** for inspection and combination.
+3. **Screened survey priorities:** a resulting **0–100 ginseng survey-priority index** identifying places meriting further ecological investigation within the analysis mask.
+
+**Important distinction:** The ginseng index is an **experimental ecological survey-priority score**, not a calibrated probability of ginseng occurrence, a field-validated prediction, or a result of the independent bloodroot/mayapple county-holdout validation. Its resolution does not imply that every environmental source was observed at 10 m resolution. These graphics illustrate the QGIS screening workflow, rather than demonstrate predictive validity.
+
 ## Scope, materials, and limitations
 
 This folder is a **public-safe, aggregate research write-up with editable SVG diagrams**. It is **not a reproduction package**. It does not include scripts, source rasters, raster predictions, precise occurrence coordinates, or unreviewed derived location layers. A separate, auditable code-and-data release would require reviewing licensing, source snapshots, provenance hashes, spatial-data sensitivity, and reproducibility. The figures are visual presentations of previously calculated summaries; no models were rerun to produce them.
