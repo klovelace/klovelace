@@ -12,8 +12,19 @@ I am the founder of [Glyph Analytics](https://glyphanalytics.com/). Before that,
 | --- | --- | --- |
 | **[Practice Mark](https://github.com/klovelace/practice-mark)** | Designed and shipped a Chrome extension that turns YouTube lessons into a hands-free practice workflow with marks, looping, playback controls, and optional speech recognition. | Shipped, unlisted beta |
 | **[AI Evaluation Operations](https://github.com/klovelace/AssessorWorkflow)** | A three-part interactive prototype for rubric-based AI content assessment, rater calibration, and evaluation-operations monitoring. [Explore the three demos](https://github.com/klovelace/AssessorWorkflow/tree/main/netflix-ai-eval-portfolio). | Portfolio prototype; illustrative data |
-| **[Geospatial ML: Geographic Transfer Validation](projects/spatial-validation/README.md)** | Built a 23-county GIS and spatial-ML validation workflow with frozen temporal and whole-county holdouts, observer-effort correction, and a proximity-only null; reports positive, uncertain, and contrary results. [Workflow](projects/spatial-validation/assets/workflow.svg) · [Results graphic](projects/spatial-validation/assets/transfer-effects.svg). | Completed research case study; unpublished |
+| **[Geospatial ML: Geographic Transfer Validation](projects/spatial-validation/README.md)** | Built a 23-county GIS and spatial-ML validation workflow with frozen temporal and whole-county holdouts, observer-effort correction, and a proximity-only null; reports positive, uncertain, and contrary results. | Completed research case study; unpublished |
 | **[Monitoring Tools Compendium](https://github.com/klovelace/MonitoringTools)** | A curated historical reference collection of monitoring frameworks, indicator resources, and assessment instruments spanning international development domains. | Reference resource |
+
+### Geospatial ML: evidence at a glance
+
+<table>
+<tr>
+<td width="53%"><a href="projects/spatial-validation/README.md"><img src="projects/spatial-validation/assets/transfer-effects.svg" alt="Actual holdout validation results comparing geographic transfer effects and uncertainty" width="100%"></a></td>
+<td valign="top"><strong><a href="projects/spatial-validation/README.md">Geographic transfer validation</a></strong><br><br>Spatial and temporal holdouts, observer-effort correction, and a proximity-only null help distinguish predictive signal from geographic leakage. The case study reports both supportive and contrary evidence rather than hiding weak transfer results.<br><br><a href="projects/spatial-validation/assets/workflow.svg">View the actual validation workflow →</a></td>
+</tr>
+</table>
+
+**Visual standard for the rest of the portfolio:** use real application screenshots or research outputs beside each project's explanation. Do not substitute generic stock images or fabricated UI. Practice Mark and AI Evaluation Operations screenshots will be added after capture and review.
 
 ## Selected analytical demonstrations
 
