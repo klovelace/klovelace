@@ -2,6 +2,8 @@
 
 Lift Lab helps an analyst go from a plain-language business or program question to a frozen, auditable experiment, and then to an accepted result. AI widens the set of designs considered and attacks each one. Deterministic code enforces the scientific rules, and the human owner makes every decision that matters.
 
+**Quick intro:** [How Lift Lab works (11 slides, PDF)](how-lift-lab-works.pdf). The details are below.
+
 **Status:** working system (v0.13), exercised on more than a dozen design families and on synthetic experiments with known effects. The source code is private; this page documents how it works and what it has been tested to do.
 
 ## 1. How a design gets made
