@@ -8,48 +8,41 @@ I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID
 
 ## Flagship portfolio
 
-Six projects, ranked by their relevance to senior applied AI, data science, experimentation, and decision intelligence roles. **Completed work, proprietary systems, and planned demonstrations are distinguished explicitly.**
+Five projects, ranked by their relevance to senior applied AI, data science, experimentation, and decision intelligence roles. Each links to its case study or demonstration, and synthetic or illustrative data is labeled.
 
-### 01 · Lift Lab — Experimentation & Decision Engine
+### 01 · Lift Lab — AI-Assisted Experiment Design
 
 <table><tr>
-<td width="38%" valign="top"><strong>Proprietary platform</strong><br><br>Experiment design → scientific challenge → power and analysis contracts → verified evidence.<br><br><em>Product screenshots and a sanitized walkthrough are being reviewed for disclosure. No source code or internal artifacts are public.</em></td>
-<td valign="top"><strong>AI evaluation · Causal inference · Decision intelligence</strong><br><br>Lift Lab combines AI-assisted identification-strategy critique with deterministic scientific checks, frozen experiment specifications, assignment provenance, and auditable analysis and reporting. Its documented synthetic tests include both detected and inconclusive treatment effects, plus rejection of corrupted assignment data.<br><br><strong>Career signal:</strong> Ability to evaluate whether an intervention actually creates value, not merely deploy an AI model.<br><br><strong>Status:</strong> Working proprietary system; public case study pending disclosure approval.</td>
+<td width="46%" valign="top"><a href="projects/lift-lab/README.md"><img src="projects/lift-lab/assets/lift-lab-trust-boundary.svg" alt="Lift Lab trust boundary: what the AI may and may not do" width="100%"></a><br><sub>The AI proposes and critiques; deterministic code and the human owner decide.</sub></td>
+<td valign="top"><strong>Experimentation · Causal inference · Human-in-the-loop AI</strong><br><br><a href="projects/lift-lab/README.md">Explore the Lift Lab case study</a>. An AI planner proposes candidate designs and a separate AI challenger attacks them. A deterministic adjudicator scores each one PASS, WARN or FAIL, and the human owner selects, supplies the empirical inputs and approves. Only a deterministic engine computes power. Designs are SHA-256 frozen, assignment is HMAC-verified, and launch requires five checks to pass together.<br><br><strong>Career signal:</strong> AI used where it adds value, with scientific and business decisions kept accountable.<br><br><strong>Status:</strong> Working system (v0.13) covering a dozen-plus design families, validated on synthetic experiments with detected and inconclusive effects. Source is private; the case study documents the architecture and results.</td>
 </tr></table>
 
 ### 02 · GeoEvidence — Spatial Prediction & Validation
 
 <table><tr>
 <td width="48%" valign="top"><a href="projects/spatial-validation/README.md"><img src="projects/spatial-validation/assets/transfer-effects.svg" alt="Actual geographic transfer validation results with estimates and uncertainty" width="100%"></a><br><sub>Actual project output: geographic transfer and uncertainty validation.</sub></td>
-<td valign="top"><strong>Geospatial ML · Environmental intelligence · Research</strong><br><br><a href="projects/spatial-validation/README.md">Explore the research case study</a>. A 23-county GIS and spatial-ML workflow uses temporal and whole-county holdouts, observer-effort correction, and a proximity-only null to distinguish generalizable signal from geographic leakage. It reports positive, uncertain, and contrary findings.<br><br><a href="projects/spatial-validation/assets/workflow.svg">See the real validation workflow →</a><br><br><strong>Career signal:</strong> Spatial prediction evaluated against defensible out-of-sample evidence.<br><br><strong>Status:</strong> Documented research case study; actual county-holdout map exports pending upload and visual verification.</td>
+<td valign="top"><strong>Geospatial ML · Environmental intelligence · Research</strong><br><br><a href="projects/spatial-validation/README.md">Explore the research case study</a>. A 23-county GIS and spatial-ML workflow uses temporal and whole-county holdouts, observer-effort correction, and a proximity-only null to distinguish generalizable signal from geographic leakage. It reports positive, uncertain, and contrary findings.<br><br><a href="projects/spatial-validation/assets/workflow.svg">See the real validation workflow →</a><br><br><strong>Career signal:</strong> Spatial prediction evaluated against defensible out-of-sample evidence.<br><br><strong>Status:</strong> Documented research case study; manuscript in preparation (co-author).</td>
 </tr></table>
 
 ### 03 · Veiled Vote — Mechanism Design & Institutional AI
 
 <table><tr>
 <td width="46%" valign="top"><a href="projects/veiled-vote/README.md"><img src="projects/veiled-vote/assets/panel-sensitivity.svg" alt="Actual synthetic simulation results: citizen panel accuracy rose as panel size increased" width="100%"></a><br><sub>Original visualization of recorded adversarial simulation outputs.</sub></td>
-<td valign="top"><strong>Multi-agent simulation · AI governance · Game theory</strong><br><br><a href="projects/veiled-vote/README.md">Explore the simulation research case study</a>. Sequential experiments test receipt-free preference reports, veiled elicitation, adaptive strategic agents, and attacks on institutional safeguards. A tougher adversarial test found that enlarging vignette banks did not substantially improve accuracy, while larger simulated citizen panels were more resilient under the modeled assumptions.<br><br><strong>Career signal:</strong> Iterative computational research that exposes failed hypotheses, adversarial adaptation, and institutional tradeoffs.<br><br><strong>Status:</strong> Exploratory simulation results and three original charts published from the research transcript; independently reproducible source package not yet verified. Hybrid institutional design is a next-step hypothesis.</td>
+<td valign="top"><strong>Multi-agent simulation · AI governance · Game theory</strong><br><br><a href="projects/veiled-vote/README.md">Explore the simulation research case study</a>. Sequential experiments test receipt-free preference reports, veiled elicitation, adaptive strategic agents, and attacks on institutional safeguards. A tougher adversarial test found that enlarging vignette banks did not substantially improve accuracy, while larger simulated citizen panels were more resilient under the modeled assumptions.<br><br><strong>Career signal:</strong> Iterative computational research that exposes failed hypotheses, adversarial adaptation, and institutional tradeoffs.<br><br><strong>Status:</strong> Exploratory simulation study with three published charts. Hybrid institutional design is the next hypothesis.</td>
 </tr></table>
 
-### 04 · EvidenceOps — AI-Assisted Research Workflows
+### 04 · Glyph Evidence — Traceable AI-Assisted Evaluation
 
 <table><tr>
-<td width="38%" valign="top"><strong>Workflow demonstration pending</strong><br><br>Planned visuals: source document → evidence extraction → citation check → reviewer decision.</td>
-<td valign="top"><strong>LLM applications · Human-in-the-loop AI · Evaluation</strong><br><br>Planned reproducible demonstration of document review, evidence extraction, uncertainty flags, and findings with traceable citations. Related <a href="https://github.com/klovelace/AssessorWorkflow">AI Evaluation Operations prototypes</a> already demonstrate rubric-based assessment, rater calibration, and evaluation management, but do not yet establish this end-to-end evidence workflow.<br><br><strong>Career signal:</strong> Enterprise AI implementation grounded in verification and human oversight.<br><br><strong>Status:</strong> Portfolio build planned; related prototypes available.</td>
+<td width="38%" valign="top"><strong>Evaluation workflow</strong><br><br>Sources → evaluation questions → themes and coding → theory-of-change tests → triangulated findings → cited report.</td>
+<td valign="top"><strong>LLM applications · Human-in-the-loop AI · Evaluation</strong><br><br>A local-first application that ties every finding, conclusion and recommendation to the exact passages behind it, across documents, spreadsheets and interview recordings. AI drafts themes, theory-of-change links and findings. Each quotation is checked character for character against its source, unsearched questions are reported as "not yet examined" rather than "no evidence," and nothing is confirmed until an evaluator reviews it. Related <a href="https://github.com/klovelace/AssessorWorkflow">AI Evaluation Operations prototypes</a> cover rubric-based assessment and rater calibration.<br><br><strong>Career signal:</strong> AI deployed in a high-stakes workflow with verification and human oversight built in.<br><br><strong>Status:</strong> Working application with an automated test suite and a synthetic sample project.</td>
 </tr></table>
 
 ### 05 · Adaptive Programs — AI for Program Management
 
 <table><tr>
 <td width="46%" valign="top"><a href="projects/adaptive-programs/README.md"><img src="projects/adaptive-programs/assets/evidence-to-action.svg" alt="Conceptual evidence-to-action workflow for School Food Impact Lab" width="100%"></a><br><sub>Conceptual workflow diagram; live interactive dashboard linked in the case study.</sub></td>
-<td valign="top"><strong>Adaptive management · Program analytics · Causal inference</strong><br><br><a href="projects/adaptive-programs/README.md">Explore the Adaptive Programs case study</a> and <a href="https://glyphanalytics.com/school-food/">launch the School Food Impact Lab</a>. A public interactive demonstration connects school implementation tracking, student preferences, menu exposure versus selection, theory-of-change evidence, synthetic-control sensitivity tests, and greenhouse-gas uncertainty.<br><br><strong>Career signal:</strong> Ability to translate program monitoring and causal evidence into a practical management feedback loop.<br><br><strong>Status:</strong> Public interactive demonstration and case study available; example data are simulated. No claim of live client deployment, verified treatment effects, or autonomous AI decision-making.</td>
-</tr></table>
-
-### 06 · TrustBench — AI Reliability & Governance
-
-<table><tr>
-<td width="38%" valign="top"><strong>Benchmark results pending</strong><br><br>Planned visuals: evidence fidelity, unsupported claims, prompt sensitivity, review burden, and cost-performance tradeoffs.</td>
-<td valign="top"><strong>Model evaluation · Safety · Governance · Reliability</strong><br><br>Planned reusable evaluation harness for checking groundedness, factual support, consistency, and escalation to human review. Benchmark data and reproducible evaluation procedures must be established before reporting performance claims.<br><br><strong>Career signal:</strong> Understanding of AI system reliability beyond model demonstrations.<br><br><strong>Status:</strong> Proposed project, not yet a validated benchmark.</td>
+<td valign="top"><strong>Adaptive management · Program analytics · Causal inference</strong><br><br><a href="projects/adaptive-programs/README.md">Explore the Adaptive Programs case study</a> and <a href="https://glyphanalytics.com/school-food/">launch the School Food Impact Lab</a>. A public interactive demonstration connects school implementation tracking, student preferences, menu exposure versus selection, theory-of-change evidence, synthetic-control sensitivity tests, and greenhouse-gas uncertainty.<br><br><strong>Career signal:</strong> Ability to translate program monitoring and causal evidence into a practical management feedback loop.<br><br><strong>Status:</strong> Public interactive demonstration and case study; example data are simulated.</td>
 </tr></table>
 
 ## Additional engineering & research
@@ -88,4 +81,4 @@ Former senior data science and analytics leader at USAID · M.P.A., Policy Analy
 
 ---
 
-*Disclosure: Lift Lab is proprietary and its code remains private. Public portfolio materials use actual project outputs only where approved. Research prototypes, synthetic examples, and proposed work are labeled accordingly. No confidential source, client data, or deployment secrets are included.*
+*Lift Lab and Glyph Evidence source code is private. Examples that use synthetic or illustrative data are labeled as such.*
