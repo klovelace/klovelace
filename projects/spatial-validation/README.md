@@ -2,6 +2,8 @@
 
 **Research case study | Western North Carolina | GIS, spatial machine learning, and frozen external validation**
 
+> **Revision in progress (October 2026).** An audit of the modeling pipeline found that the original background sampler accepted candidate locations in sorted grid order, which distorted the background sample. The random-forest results on this page come from the original v1.0 analysis and are being revised. Preliminary corrected reruns change some conclusions, including whether effort-aware background improves on uniform background. The corrected manuscript is in preparation; this page will be updated when it is final.
+
 <table>
 <tr>
 <td width="53%" valign="top"><img src="assets/workflow.svg" alt="Actual geospatial research workflow: environmental data, occurrence audit, model comparison, and geographic holdout validation" width="100%"></td>
@@ -100,7 +102,7 @@ Additional limitations include opportunistic observation bias, incomplete measur
 
 ### GIS supporting exhibits: terrain, predictors, and held-out model validation
 
-The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The four original map exhibits have been approved by the project owner and are now published in this repository, alongside the workflow and transfer-effect diagrams.
+The companion cartographic exports come from the **Western North Carolina environmental stack and geographic holdout analysis**, using a reproducible **QGIS 4.2** layout/export workflow. They distinguish the covariates used in model development from the **county-level evaluation results**. The four original map exhibits appear below, alongside the workflow and transfer-effect diagrams.
 
 | Map exhibit | What it shows | Reading the evidence |
 | --- | --- | --- |
@@ -125,7 +127,7 @@ The companion cartographic exports come from the **Western North Carolina enviro
 
 **Map scores represent the median landscape percentile assigned to future observation records within a held-out county**, calculated against the eligible reference landscape. They are **not calibrated occupancy probabilities**, ground-truth presence/absence maps, predicted plant counts, or field-validated occurrence locations. The maps are intended to show county-level summary statistics only, **without plant occurrence coordinates**. The images show regional geographic context and county boundaries, but no individual plant occurrence coordinates.
 
-The terrain and environmental layers are shared analytical inputs. The county-level output maps summarize out-of-sample evaluation rather than fine-resolution survey priorities. They must not be confused with an independently calibrated habitat probability surface. The local export script, `scripts/export_bloodroot_cohosh_maps.py`, documents the QGIS rendering workflow but is not included in this public documentation repository.
+The terrain and environmental layers are shared analytical inputs. The county-level output maps summarize out-of-sample evaluation rather than fine-resolution survey priorities. They must not be confused with an independently calibrated habitat probability surface.
 
 ### Detailed study design and data provenance
 
@@ -159,6 +161,6 @@ The 60 m grid supports **regional ranking**, not fine-scale habitat suitability 
 - [USDA NRCS SSURGO](https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo)
 - [iNaturalist](https://www.inaturalist.org/)
 
-**Project status:** Research analysis complete; public portfolio case study published. Supplemental QGIS map PNGs are published alongside the methodological figures. The research itself remains independent and unpublished in a peer-reviewed venue. All descriptive values above come from the completed project’s frozen confirmatory result summaries and research manuscript. No peer-review or production-deployment claim is made.
+**Project status:** Independent research, not yet peer reviewed. Values above are from the v1.0 frozen confirmatory summaries; a corrected manuscript is in preparation (co-authored).
 
 [Back to portfolio](../../README.md)

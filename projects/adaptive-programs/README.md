@@ -4,7 +4,7 @@
 
 [**Launch the live interactive dashboard →**](https://glyphanalytics.com/school-food/)
 
-> **Disclosure:** School Food Impact Lab is a public-facing analytical demonstration built with simulated data. It is not a live client implementation, a verified impact evaluation, or evidence of actual changes in school nutrition or greenhouse-gas emissions. The dashboard's interactive features demonstrate a possible workflow; they do not establish production integrations or deployed AI agents.
+> **Note:** School Food Impact Lab is a public demonstration built with simulated data. It shows a monitoring and evaluation workflow; it is not a client deployment or a measured impact evaluation.
 
 ## The management problem
 
@@ -56,12 +56,8 @@ The theory-of-change evidence panels connect delivery signals, student behavior,
 
 **What is not established:** automated data ingestion from school districts, validated predictive AI models, automated recommendations, field deployment, or measured program impact. “AI for Program Management” describes the broader portfolio theme; this particular artifact primarily demonstrates **decision-oriented analytics and human-in-the-loop evaluation design**.
 
-The dashboard was intentionally published without client-specific names or procurement references. Public case-study materials should preserve that separation.
-
 ## Explore
 
 - [Open School Food Impact Lab](https://glyphanalytics.com/school-food/)
 - [Visit Glyph Analytics](https://glyphanalytics.com/)
 - [Back to portfolio](../../README.md)
-
-**Next enhancement:** add authentic screenshots captured from the deployed dashboard and, if disclosure permits, a compact technical appendix explaining data schemas, synthetic-control diagnostics, and uncertainty assumptions. Do not substitute generated UI mockups for real application screenshots.
