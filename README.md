@@ -17,17 +17,17 @@ I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID
 | **Adjust** | Route each signal to an owner and a pre-agreed decision rule. | Decision rules, guardrail metrics, action tracking |
 | **Verify** | Separate real effects from noise and trend before scaling. | Randomized experiments, difference-in-differences, synthetic control, cluster-robust inference, sensitivity tests |
 
-The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whole loop end to end; [Lift Lab](projects/lift-lab/README.md) builds the Verify step into experiment design itself.
+The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whole loop end to end; [Trimtab](projects/trimtab/README.md) builds the Verify step into experiment design itself.
 
 ## Flagship portfolio
 
 Five projects, ranked by their relevance to decision science leadership roles. Each links to its case study or demonstration, and synthetic or illustrative data is labeled.
 
-### 01 · Lift Lab — AI-Assisted Experiment Design
+### 01 · Trimtab — AI-Assisted Experiment Design
 
 <table><tr>
-<td width="46%" valign="top"><a href="projects/lift-lab/README.md"><img src="projects/lift-lab/assets/lift-lab-trust-boundary.svg" alt="Lift Lab trust boundary: what the AI may and may not do" width="100%"></a><br><sub>The AI proposes and critiques; deterministic code and the human owner decide.</sub></td>
-<td valign="top"><strong>Experimentation · Causal inference · Human-in-the-loop AI</strong><br><br><a href="projects/lift-lab/README.md">Explore the Lift Lab case study</a> · <a href="projects/lift-lab/how-lift-lab-works.pdf">11-slide intro (PDF)</a>. An AI planner proposes candidate designs and a separate AI challenger attacks them. A deterministic adjudicator scores each one PASS, WARN or FAIL, and the human owner selects, supplies the empirical inputs and approves. Only a deterministic engine computes power. Designs are SHA-256 frozen, assignment is HMAC-verified, and launch requires five checks to pass together.<br><br><strong>Career signal:</strong> AI used where it adds value, with scientific and business decisions kept accountable.<br><br><strong>Status:</strong> Working system (v0.13) covering a dozen-plus design families, validated on synthetic experiments with detected and inconclusive effects. Source is private; the case study documents the architecture and results.</td>
+<td width="46%" valign="top"><a href="projects/trimtab/README.md"><img src="projects/trimtab/assets/trimtab-trust-boundary.svg" alt="Trimtab trust boundary: what the AI may and may not do" width="100%"></a><br><sub>The AI proposes and critiques; deterministic code and the human owner decide.</sub></td>
+<td valign="top"><strong>Experimentation · Causal inference · Human-in-the-loop AI</strong><br><br><a href="projects/trimtab/README.md">Explore the Trimtab case study</a>. An AI planner proposes candidate designs and a separate AI challenger attacks them. A deterministic adjudicator scores each one PASS, WARN or FAIL, and the human owner selects, supplies the empirical inputs and approves. Only a deterministic engine computes power. Designs are SHA-256 frozen, assignment is HMAC-verified, and launch requires five checks to pass together.<br><br><strong>Career signal:</strong> AI used where it adds value, with scientific and business decisions kept accountable.<br><br><strong>Status:</strong> Working system (v0.13) covering a dozen-plus design families, validated on synthetic experiments with detected and inconclusive effects. Source is private; the case study documents the architecture and results.</td>
 </tr></table>
 
 ### 02 · Adaptive Programs — Decision Analytics for Program Management
@@ -92,4 +92,4 @@ Former senior data science and analytics leader at USAID · M.P.A., Policy Analy
 
 ---
 
-*Lift Lab and Glyph Evidence source code is private. Examples that use synthetic or illustrative data are labeled as such.*
+*Trimtab and Glyph Evidence source code is private. Examples that use synthetic or illustrative data are labeled as such.*

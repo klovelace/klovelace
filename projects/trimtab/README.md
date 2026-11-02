@@ -1,14 +1,14 @@
-# Lift Lab: AI-assisted experiment design with deterministic safeguards
+# Trimtab: AI-assisted experiment design with deterministic safeguards
 
-Lift Lab helps an analyst go from a plain-language business or program question to a frozen, auditable experiment, and then to an accepted result. AI widens the set of designs considered and attacks each one. Deterministic code enforces the scientific rules, and the human owner makes every decision that matters.
+Trimtab helps an analyst go from a plain-language business or program question to a frozen, auditable experiment, and then to an accepted result. AI widens the set of designs considered and attacks each one. Deterministic code enforces the scientific rules, and the human owner makes every decision that matters.
 
-**Quick intro:** [How Lift Lab works (11 slides, PDF)](how-lift-lab-works.pdf). The details are below.
+*Formerly called Lift Lab.*
 
 **Status:** working system (v0.13), exercised on more than a dozen design families and on synthetic experiments with known effects. The source code is private; this page documents how it works and what it has been tested to do.
 
 ## 1. How a design gets made
 
-<img src="assets/lift-lab-workflow.svg" alt="Swimlane diagram: human owner, AI planner and challenger, and deterministic checks from question to frozen design" width="100%">
+<img src="assets/trimtab-workflow.svg" alt="Swimlane diagram: human owner, AI planner and challenger, and deterministic checks from question to frozen design" width="100%">
 
 1. **The owner asks a question** in plain language and locks the facts they already know: outcome, unit, arms.
 2. **An AI planner proposes two to four candidate designs**, such as an A/B test, a cluster trial, a switchback or a difference-in-differences study.
@@ -24,7 +24,7 @@ Lift Lab helps an analyst go from a plain-language business or program question 
 
 ## 2. The trust boundary
 
-<img src="assets/lift-lab-trust-boundary.svg" alt="What the AI planner and challenger may and may not do, and how it is enforced" width="100%">
+<img src="assets/trimtab-trust-boundary.svg" alt="What the AI planner and challenger may and may not do, and how it is enforced" width="100%">
 
 The boundary lives in the architecture, not in prompt wording:
 
@@ -34,7 +34,7 @@ The boundary lives in the architecture, not in prompt wording:
 
 ## 3. Deterministic gates from design to decision
 
-<img src="assets/lift-lab-gates.svg" alt="Six fail-closed gates: design adjudication, power firewall, freeze, verified assignment, launch gate, frozen analysis and review" width="100%">
+<img src="assets/trimtab-gates.svg" alt="Six fail-closed gates: design adjudication, power firewall, freeze, verified assignment, launch gate, frozen analysis and review" width="100%">
 
 - **Contracts compose without overrides.** The analysis, metric, estimand and scientific-validity contracts must agree before freeze. No layer can silently rewrite another, and a disagreement blocks execution.
 - **Verified assignment.** The assignment export is rebuilt from the exact eligibility snapshot and assignment events, using an HMAC secret and a frozen salt identifier. In testing, corrupted assignment data was rejected.
@@ -44,7 +44,7 @@ The boundary lives in the architecture, not in prompt wording:
 
 ## 4. Validation
 
-<img src="assets/lift-lab-validation.svg" alt="Activation +7.63 percentage points detected; task score +0.48 inconclusive" width="100%">
+<img src="assets/trimtab-validation.svg" alt="Activation +7.63 percentage points detected; task score +0.48 inconclusive" width="100%">
 
 | Synthetic experiment | Enrolled | ITT estimate | 95% interval | Outcome |
 |---|---:|---:|---|---|
@@ -80,6 +80,6 @@ Designs with substantive assumptions are marked "supported with limits" and rout
 
 ## Why it matters
 
-Most experimentation failures happen before any data arrives: the wrong unit, unpowered tests, undeclared interference, and metrics chosen after seeing results. Lift Lab uses AI where it helps most, generating alternatives and stress-testing them. It keeps the decisions that carry scientific and business risk with deterministic code and an accountable human.
+Most experimentation failures happen before any data arrives: the wrong unit, unpowered tests, undeclared interference, and metrics chosen after seeing results. Trimtab uses AI where it helps most, generating alternatives and stress-testing them. It keeps the decisions that carry scientific and business risk with deterministic code and an accountable human.
 
 [← Back to portfolio](../../README.md)
