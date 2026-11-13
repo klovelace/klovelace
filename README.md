@@ -19,6 +19,17 @@ I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID
 
 The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whole loop end to end; [Trimtab](projects/trimtab/README.md) builds the Verify step into experiment design itself.
 
+## Marketing science & ML: public code
+
+A new series of open-source projects, each ending in a decision memo rather than a metric. All code is public and reproducible.
+
+### Uplift Targeting — Who Should Get the Email?
+
+<table><tr>
+<td width="46%" valign="top"><a href="https://github.com/klovelace/uplift-targeting"><img src="https://raw.githubusercontent.com/klovelace/uplift-targeting/main/outputs/figures/fig9_breakeven.png" alt="Net value of emailing the top share of customers at different values of a visit" width="100%"></a><br><sub>Where to stop emailing depends on what a visit is worth.</sub></td>
+<td valign="top"><strong>Uplift modeling · Causal ML · Model tuning · Google Cloud</strong><br><br><a href="https://github.com/klovelace/uplift-targeting">View the repo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MEMO.md">Decision memo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MODEL_CARD.md">Model card</a>. On a 64,000-customer randomized email experiment, a regularized logistic regression out-ranked tuned random forests, LightGBM, stacking, an X-learner and a causal forest on held-out data. Emailing the top half keeps 69% of the lift, and the best cutoff jumps from half to everyone once a visit is worth about 27× an email. Choosing the email per customer beat no simple rule. Deployed as batch scoring in BigQuery ML (ONNX) and registered in Vertex AI, with cloud scores matching local to 8 × 10⁻⁹.<br><br><strong>Career signal:</strong> model selection that survives a held-out test, results framed as a business decision, and a verified cloud deployment.<br><br><strong>Status:</strong> Complete; MIT-licensed; public data downloaded and checksum-verified.</td>
+</tr></table>
+
 ## Flagship portfolio
 
 Five projects, ranked by their relevance to decision science leadership roles. Each links to its case study or demonstration, and synthetic or illustrative data is labeled.
