@@ -19,9 +19,16 @@ I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID
 
 The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whole loop end to end; [Trimtab](projects/trimtab/README.md) builds the Verify step into experiment design itself.
 
-## Marketing science & ML: public code
+## Recent public work
 
-A new series of open-source projects, each ending in a decision memo rather than a metric. All code is public and reproducible.
+Open-source projects, each ending in a decision rather than a metric. All code and data sources are public and reproducible.
+
+### Decatur Connects — Where Should the City Build for Safer Biking?
+
+<table><tr>
+<td width="46%" valign="top"><a href="https://klovelace.github.io/decatur-connects/"><img src="projects/decatur-connects/assets/network-map.png" alt="Map of the proposed Decatur bike network with numbered priority intersections" width="100%"></a><br><sub>The proposed network, with the 12 priority intersections numbered. <a href="https://klovelace.github.io/decatur-connects/">Open the interactive map</a>.</sub></td>
+<td valign="top"><strong>Transportation safety · Geospatial analysis · Network routing</strong><br><br><a href="https://klovelace.github.io/decatur-connects/">Live page</a> · <a href="https://github.com/klovelace/decatur-connects">View the repo</a>. A citizen proposal for a 14.5-mile protected bike network in Decatur, Georgia, built from the city's 2019–2023 crash records (3,451 crashes), its adopted Safety Action Plan, and the OpenStreetMap street network. People walking and biking were 3% of crashes but 40% of fatal and serious ones, and 47 of the 93 walking and biking crashes happened at 12 intersections. Each of those intersections gets a crash diagnosis (left turns in 19 of 47) and federal safety countermeasures. Low-stress greenways are routed over the street network, each corridor's design is matched to its traffic volume using FHWA and NACTO guidance, and every phase is tied to a funding source. The network would put all nine public schools within a quarter mile of a low-stress route, up from five.<br><br><strong>Career signal:</strong> public data turned into a specific, fundable plan that a city and state DOT can act on.<br><br><strong>Status:</strong> Published November 2026 as a proposal for discussion with city staff; not an engineering design.</td>
+</tr></table>
 
 ### Uplift Targeting — Who Should Get the Email?
 
