@@ -31,21 +31,28 @@ Ranked by relevance to data science and experimentation roles. Public repos incl
 <td valign="top"><strong>Transportation safety · Geospatial analysis · Network routing</strong><br><br><a href="https://klovelace.github.io/decatur-connects/">Live page</a> · <a href="https://github.com/klovelace/decatur-connects">View the repo</a>. A citizen proposal for a 14.5-mile protected bike network in Decatur, Georgia, built from the city's 2019–2023 crash records (3,451 crashes), its adopted Safety Action Plan, and the OpenStreetMap street network. People walking and biking were 3% of crashes but 40% of fatal and serious ones, and 47 of the 93 walking and biking crashes happened at 12 intersections. Each of those intersections gets a crash diagnosis (left turns in 19 of 47) and federal safety countermeasures. Low-stress greenways are routed over the street network, each corridor's design is matched to its traffic volume using FHWA and NACTO guidance, and every phase is tied to a funding source. The network would put all nine public schools within a quarter mile of a low-stress route, up from five.<br><br><strong>Status:</strong> Published November 2026 as a proposal for discussion with city staff; not an engineering design.</td>
 </tr></table>
 
-### 04 · GeoEvidence — Spatial Prediction & Validation
+### 04 · Contact Centre Operations BI — How Many Agents Does the Phone Queue Need?
+
+<table><tr>
+<td width="46%" valign="top"><a href="https://klovelace.github.io/contact-center-bi/"><img src="https://raw.githubusercontent.com/klovelace/contact-center-bi/main/docs/preview.png" alt="Contact centre operations dashboard with KPI tiles, findings and channel-shift charts" width="100%"></a><br><sub>Executive dashboard on 2.26M Toronto 311 records. <a href="https://klovelace.github.io/contact-center-bi/">Open the live dashboard</a>.</sub></td>
+<td valign="top"><strong>Business intelligence · KPI design · Data governance · Forecasting</strong><br><br><a href="https://klovelace.github.io/contact-center-bi/">Live dashboard</a> · <a href="https://github.com/klovelace/contact-center-bi">View the repo</a>. An end-to-end BI build for the 311 Toronto Contact Centre (about 1.3 million contacts a year): an automated pipeline with logged data-quality checks (it repairs about 35,000 malformed source rows a year and reconciles every record), a star-schema model with Power BI DAX measures, a written KPI dictionary, a Holt-Winters phone-volume forecast (8.8% error on a 12-month holdout vs 12.4% for a seasonal baseline), and an Erlang C model that sizes the peak-hour team to hold 80% of calls answered in 75 seconds. Findings: self-service more than doubled its share of contacts since 2022, the service-level margin is under two points, and 5.9% of contacts are avoidable follow-ups.<br><br><strong>Status:</strong> Complete; public City of Toronto open data; tests included.</td>
+</tr></table>
+
+### 05 · GeoEvidence — Spatial Prediction & Validation
 
 <table><tr>
 <td width="48%" valign="top"><a href="projects/spatial-validation/README.md"><img src="projects/spatial-validation/assets/transfer-effects.svg" alt="Actual geographic transfer validation results with estimates and uncertainty" width="100%"></a><br><sub>Actual project output: geographic transfer and uncertainty validation.</sub></td>
 <td valign="top"><strong>Geospatial ML · Environmental intelligence · Research</strong><br><br><a href="projects/spatial-validation/README.md">Explore the research case study</a>. A 23-county GIS and spatial-ML workflow uses temporal and whole-county holdouts, observer-effort correction, and a proximity-only null to distinguish generalizable signal from geographic leakage. It reports positive, uncertain, and contrary findings.<br><br><a href="projects/spatial-validation/assets/workflow.svg">See the real validation workflow →</a><br><br><strong>Status:</strong> Documented research case study; v1.0 results under revision after a pipeline audit; corrected manuscript in preparation (co-author).</td>
 </tr></table>
 
-### 05 · Glyph Evidence — Traceable AI-Assisted Evaluation
+### 06 · Glyph Evidence — Traceable AI-Assisted Evaluation
 
 <table><tr>
 <td width="38%" valign="top"><strong>Evaluation workflow</strong><br><br>Sources → evaluation questions → themes and coding → theory-of-change tests → triangulated findings → cited report.</td>
 <td valign="top"><strong>LLM applications · Human-in-the-loop AI · Evaluation</strong><br><br>A local-first application that ties every finding, conclusion and recommendation to the exact passages behind it, across documents, spreadsheets and interview recordings. AI drafts themes, theory-of-change links and findings. Each quotation is checked character for character against its source, unsearched questions are reported as "not yet examined" rather than "no evidence," and nothing is confirmed until an evaluator reviews it. Related <a href="https://github.com/klovelace/AssessorWorkflow">AI Evaluation Operations prototypes</a> cover rubric-based assessment and rater calibration.<br><br><strong>Status:</strong> Working application with an automated test suite and a synthetic sample project.</td>
 </tr></table>
 
-### 06 · Adaptive Programs — Decision Analytics for Program Management
+### 07 · Adaptive Programs — Decision Analytics for Program Management
 
 <table><tr>
 <td width="46%" valign="top"><a href="projects/adaptive-programs/README.md"><img src="projects/adaptive-programs/assets/evidence-to-action.svg" alt="Pinpoint, Track, Adjust, Verify loop as run in the School Food Impact Lab" width="100%"></a><br><sub>The decision loop as the demonstration runs it; all example data are simulated.</sub></td>
@@ -86,9 +93,9 @@ The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whol
 
 ## Methods & tools
 
-**Methods:** Randomized experiments, causal inference, difference-in-differences, matching, interrupted time series, monitoring and evaluation, survey research, and geospatial analysis.
+**Methods:** Randomized experiments, KPI design and data governance, demand forecasting and workforce planning, causal inference, difference-in-differences, matching, interrupted time series, monitoring and evaluation, survey research, and geospatial analysis.
 
-**Tools:** Python, SQL, R, Stata, JavaScript, GIS, dashboards, and analytical workflow development.
+**Tools:** Python, SQL, R, Stata, JavaScript, Tableau, GIS, dashboards, and analytical workflow development.
 
 **Leadership:** Analytical strategy, interdisciplinary teams, stakeholder engagement, and decision-focused communication.
 
