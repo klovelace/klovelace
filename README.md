@@ -1,10 +1,66 @@
 # Kraemer Lovelace
 
-**Decision Science · Experimentation · Causal Inference · Applied AI**
+**Data Science · Experimentation · Causal Inference · Applied AI**
 
-I lead decision science work: framing the decisions that matter, building the evidence systems behind them, and making sure teams act on results that are real rather than noise. My work combines experimentation, causal inference, applied AI, geospatial analysis, and rigorous program evaluation.
+I lead data science and experimentation work: framing the decisions that matter, building the evidence systems behind them, and making sure teams act on results that are real rather than noise. My work combines experimentation, causal inference, applied AI, geospatial analysis, and rigorous program evaluation.
 
 I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID leading analytics and evaluation work. My focus is on **decision systems that are scientifically defensible, technically useful, and designed for real-world implementation**.
+
+## Portfolio
+
+Ranked by relevance to data science and experimentation roles. Public repos include code and data sources; synthetic or illustrative data is labeled.
+
+### 01 · Uplift Targeting — Who Should Get the Email?
+
+<table><tr>
+<td width="46%" valign="top"><a href="https://github.com/klovelace/uplift-targeting"><img src="https://raw.githubusercontent.com/klovelace/uplift-targeting/main/outputs/figures/fig9_breakeven.png" alt="Net value of emailing the top share of customers at different values of a visit" width="100%"></a><br><sub>Where to stop emailing depends on what a visit is worth.</sub></td>
+<td valign="top"><strong>Uplift modeling · Causal ML · Model tuning · Google Cloud</strong><br><br><a href="https://github.com/klovelace/uplift-targeting">View the repo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MEMO.md">Decision memo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MODEL_CARD.md">Model card</a>. On a 64,000-customer randomized email experiment, a regularized logistic regression out-ranked tuned random forests, LightGBM, stacking, an X-learner and a causal forest on held-out data. Emailing the top half keeps 69% of the lift, and the best cutoff jumps from half to everyone once a visit is worth about 27× an email. Personalizing which email each customer got did not beat sending everyone the men's email. Deployed as batch scoring in BigQuery ML (ONNX) and registered in Vertex AI, with cloud scores matching local to 8 × 10⁻⁹.<br><br><strong>Career signal:</strong> model selection that survives a held-out test, results framed as a business decision, and a verified cloud deployment.<br><br><strong>Status:</strong> Complete; MIT-licensed; public data downloaded and checksum-verified.</td>
+</tr></table>
+
+### 02 · Trimtab — AI-Assisted Experiment Design
+
+<table><tr>
+<td width="46%" valign="top"><a href="projects/trimtab/README.md"><img src="projects/trimtab/assets/trimtab-trust-boundary.svg" alt="Trimtab trust boundary: what the AI may and may not do" width="100%"></a><br><sub>The AI proposes and critiques; deterministic code and the human owner decide.</sub></td>
+<td valign="top"><strong>Experimentation · Causal inference · Human-in-the-loop AI</strong><br><br><a href="projects/trimtab/README.md">Explore the Trimtab case study</a> · <a href="projects/trimtab/how-trimtab-works.pdf">11-slide intro (PDF)</a>. An AI planner proposes candidate designs and a separate AI challenger attacks them. A deterministic adjudicator scores each one PASS, WARN or FAIL, and the human owner selects, supplies the empirical inputs and approves. Only a deterministic engine computes power. Designs are SHA-256 frozen, assignment is HMAC-verified, and launch requires five checks to pass together.<br><br><strong>Career signal:</strong> AI used where it adds value, with scientific and business decisions kept accountable.<br><br><strong>Status:</strong> Working system (v0.13) covering a dozen-plus design families, validated on synthetic experiments with detected and inconclusive effects. Source is private; the case study documents the architecture and results.</td>
+</tr></table>
+
+### 03 · Decatur Connects — Where Should the City Build for Safer Biking?
+
+<table><tr>
+<td width="46%" valign="top"><a href="https://klovelace.github.io/decatur-connects/"><img src="projects/decatur-connects/assets/network-map.png" alt="Map of the proposed Decatur bike network with numbered priority intersections" width="100%"></a><br><sub>The proposed network, with the 12 priority intersections numbered. <a href="https://klovelace.github.io/decatur-connects/">Open the interactive map</a>.</sub></td>
+<td valign="top"><strong>Transportation safety · Geospatial analysis · Network routing</strong><br><br><a href="https://klovelace.github.io/decatur-connects/">Live page</a> · <a href="https://github.com/klovelace/decatur-connects">View the repo</a>. A citizen proposal for a 14.5-mile protected bike network in Decatur, Georgia, built from the city's 2019–2023 crash records (3,451 crashes), its adopted Safety Action Plan, and the OpenStreetMap street network. People walking and biking were 3% of crashes but 40% of fatal and serious ones, and 47 of the 93 walking and biking crashes happened at 12 intersections. Each of those intersections gets a crash diagnosis (left turns in 19 of 47) and federal safety countermeasures. Low-stress greenways are routed over the street network, each corridor's design is matched to its traffic volume using FHWA and NACTO guidance, and every phase is tied to a funding source. The network would put all nine public schools within a quarter mile of a low-stress route, up from five.<br><br><strong>Career signal:</strong> public data turned into a specific, fundable plan that a city and state DOT can act on.<br><br><strong>Status:</strong> Published November 2026 as a proposal for discussion with city staff; not an engineering design.</td>
+</tr></table>
+
+### 04 · GeoEvidence — Spatial Prediction & Validation
+
+<table><tr>
+<td width="48%" valign="top"><a href="projects/spatial-validation/README.md"><img src="projects/spatial-validation/assets/transfer-effects.svg" alt="Actual geographic transfer validation results with estimates and uncertainty" width="100%"></a><br><sub>Actual project output: geographic transfer and uncertainty validation.</sub></td>
+<td valign="top"><strong>Geospatial ML · Environmental intelligence · Research</strong><br><br><a href="projects/spatial-validation/README.md">Explore the research case study</a>. A 23-county GIS and spatial-ML workflow uses temporal and whole-county holdouts, observer-effort correction, and a proximity-only null to distinguish generalizable signal from geographic leakage. It reports positive, uncertain, and contrary findings.<br><br><a href="projects/spatial-validation/assets/workflow.svg">See the real validation workflow →</a><br><br><strong>Career signal:</strong> Spatial prediction evaluated against defensible out-of-sample evidence.<br><br><strong>Status:</strong> Documented research case study; v1.0 results under revision after a pipeline audit; corrected manuscript in preparation (co-author).</td>
+</tr></table>
+
+### 05 · Glyph Evidence — Traceable AI-Assisted Evaluation
+
+<table><tr>
+<td width="38%" valign="top"><strong>Evaluation workflow</strong><br><br>Sources → evaluation questions → themes and coding → theory-of-change tests → triangulated findings → cited report.</td>
+<td valign="top"><strong>LLM applications · Human-in-the-loop AI · Evaluation</strong><br><br>A local-first application that ties every finding, conclusion and recommendation to the exact passages behind it, across documents, spreadsheets and interview recordings. AI drafts themes, theory-of-change links and findings. Each quotation is checked character for character against its source, unsearched questions are reported as "not yet examined" rather than "no evidence," and nothing is confirmed until an evaluator reviews it. Related <a href="https://github.com/klovelace/AssessorWorkflow">AI Evaluation Operations prototypes</a> cover rubric-based assessment and rater calibration.<br><br><strong>Career signal:</strong> AI deployed in a high-stakes workflow with verification and human oversight built in.<br><br><strong>Status:</strong> Working application with an automated test suite and a synthetic sample project.</td>
+</tr></table>
+
+### 06 · Adaptive Programs — Decision Analytics for Program Management
+
+<table><tr>
+<td width="46%" valign="top"><a href="projects/adaptive-programs/README.md"><img src="projects/adaptive-programs/assets/evidence-to-action.svg" alt="Pinpoint, Track, Adjust, Verify loop as run in the School Food Impact Lab" width="100%"></a><br><sub>The decision loop as the demonstration runs it; all example data are simulated.</sub></td>
+<td valign="top"><strong>Decision systems · Program analytics · Causal inference</strong><br><br><a href="projects/adaptive-programs/README.md">Explore the Adaptive Programs case study</a> and <a href="https://glyphanalytics.com/school-food/">launch the School Food Impact Lab</a>. A public interactive demonstration of the full Pinpoint → Track → Adjust → Verify loop. It locates the binding constraint (in the simulated data, 78% of students who taste the plant-based meal like it, but it is available at service only 40% of the time), tracks school-level availability and selection monthly, turns barriers into owner-assigned actions, and tests gains against synthetic-control comparisons with sensitivity checks and greenhouse-gas uncertainty.<br><br><strong>Career signal:</strong> Designing the operating loop a decision science team runs, from finding the constraint to verified impact.<br><br><strong>Status:</strong> Public interactive demonstration and case study; example data are simulated.</td>
+</tr></table>
+
+## Selected analytical demonstrations
+
+These are independent analytical product demonstrations, not claims of employment, sponsorship, or live client deployment.
+
+| Demonstration | Decision problem |
+| --- | --- |
+| [Marketing incrementality and lifetime value](https://glyphanalytics.com/portfolio/marketing_ds_dashboard.html) | Separate incremental impact from attribution when allocating resources. |
+| [Growth journey analytics](https://glyphanalytics.com/portfolio/stripe_journey_dashboard.html) | Identify conversion friction and prioritize experiments. |
+| [Consumer growth and experimentation](https://glyphanalytics.com/HumanEval/reddit_consumer_ds_dashboard.html) | Connect retention, acquisition, and experimental evidence to product decisions. |
 
 ## How I work
 
@@ -19,63 +75,6 @@ I founded [Glyph Analytics](https://glyphanalytics.com/) after 15 years at USAID
 
 The [School Food Impact Lab](projects/adaptive-programs/README.md) runs the whole loop end to end; [Trimtab](projects/trimtab/README.md) builds the Verify step into experiment design itself.
 
-## Recent public work
-
-Open-source projects, each ending in a decision rather than a metric. All code and data sources are public and reproducible.
-
-### Decatur Connects — Where Should the City Build for Safer Biking?
-
-<table><tr>
-<td width="46%" valign="top"><a href="https://klovelace.github.io/decatur-connects/"><img src="projects/decatur-connects/assets/network-map.png" alt="Map of the proposed Decatur bike network with numbered priority intersections" width="100%"></a><br><sub>The proposed network, with the 12 priority intersections numbered. <a href="https://klovelace.github.io/decatur-connects/">Open the interactive map</a>.</sub></td>
-<td valign="top"><strong>Transportation safety · Geospatial analysis · Network routing</strong><br><br><a href="https://klovelace.github.io/decatur-connects/">Live page</a> · <a href="https://github.com/klovelace/decatur-connects">View the repo</a>. A citizen proposal for a 14.5-mile protected bike network in Decatur, Georgia, built from the city's 2019–2023 crash records (3,451 crashes), its adopted Safety Action Plan, and the OpenStreetMap street network. People walking and biking were 3% of crashes but 40% of fatal and serious ones, and 47 of the 93 walking and biking crashes happened at 12 intersections. Each of those intersections gets a crash diagnosis (left turns in 19 of 47) and federal safety countermeasures. Low-stress greenways are routed over the street network, each corridor's design is matched to its traffic volume using FHWA and NACTO guidance, and every phase is tied to a funding source. The network would put all nine public schools within a quarter mile of a low-stress route, up from five.<br><br><strong>Career signal:</strong> public data turned into a specific, fundable plan that a city and state DOT can act on.<br><br><strong>Status:</strong> Published November 2026 as a proposal for discussion with city staff; not an engineering design.</td>
-</tr></table>
-
-### Uplift Targeting — Who Should Get the Email?
-
-<table><tr>
-<td width="46%" valign="top"><a href="https://github.com/klovelace/uplift-targeting"><img src="https://raw.githubusercontent.com/klovelace/uplift-targeting/main/outputs/figures/fig9_breakeven.png" alt="Net value of emailing the top share of customers at different values of a visit" width="100%"></a><br><sub>Where to stop emailing depends on what a visit is worth.</sub></td>
-<td valign="top"><strong>Uplift modeling · Causal ML · Model tuning · Google Cloud</strong><br><br><a href="https://github.com/klovelace/uplift-targeting">View the repo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MEMO.md">Decision memo</a> · <a href="https://github.com/klovelace/uplift-targeting/blob/main/MODEL_CARD.md">Model card</a>. On a 64,000-customer randomized email experiment, a regularized logistic regression out-ranked tuned random forests, LightGBM, stacking, an X-learner and a causal forest on held-out data. Emailing the top half keeps 69% of the lift, and the best cutoff jumps from half to everyone once a visit is worth about 27× an email. Personalizing which email each customer got did not beat sending everyone the men's email. Deployed as batch scoring in BigQuery ML (ONNX) and registered in Vertex AI, with cloud scores matching local to 8 × 10⁻⁹.<br><br><strong>Career signal:</strong> model selection that survives a held-out test, results framed as a business decision, and a verified cloud deployment.<br><br><strong>Status:</strong> Complete; MIT-licensed; public data downloaded and checksum-verified.</td>
-</tr></table>
-
-## Flagship portfolio
-
-Five projects, ranked by their relevance to decision science leadership roles. Each links to its case study or demonstration, and synthetic or illustrative data is labeled.
-
-### 01 · Trimtab — AI-Assisted Experiment Design
-
-<table><tr>
-<td width="46%" valign="top"><a href="projects/trimtab/README.md"><img src="projects/trimtab/assets/trimtab-trust-boundary.svg" alt="Trimtab trust boundary: what the AI may and may not do" width="100%"></a><br><sub>The AI proposes and critiques; deterministic code and the human owner decide.</sub></td>
-<td valign="top"><strong>Experimentation · Causal inference · Human-in-the-loop AI</strong><br><br><a href="projects/trimtab/README.md">Explore the Trimtab case study</a> · <a href="projects/trimtab/how-trimtab-works.pdf">11-slide intro (PDF)</a>. An AI planner proposes candidate designs and a separate AI challenger attacks them. A deterministic adjudicator scores each one PASS, WARN or FAIL, and the human owner selects, supplies the empirical inputs and approves. Only a deterministic engine computes power. Designs are SHA-256 frozen, assignment is HMAC-verified, and launch requires five checks to pass together.<br><br><strong>Career signal:</strong> AI used where it adds value, with scientific and business decisions kept accountable.<br><br><strong>Status:</strong> Working system (v0.13) covering a dozen-plus design families, validated on synthetic experiments with detected and inconclusive effects. Source is private; the case study documents the architecture and results.</td>
-</tr></table>
-
-### 02 · Adaptive Programs — Decision Analytics for Program Management
-
-<table><tr>
-<td width="46%" valign="top"><a href="projects/adaptive-programs/README.md"><img src="projects/adaptive-programs/assets/evidence-to-action.svg" alt="Pinpoint, Track, Adjust, Verify loop as run in the School Food Impact Lab" width="100%"></a><br><sub>The decision loop as the demonstration runs it; all example data are simulated.</sub></td>
-<td valign="top"><strong>Decision systems · Program analytics · Causal inference</strong><br><br><a href="projects/adaptive-programs/README.md">Explore the Adaptive Programs case study</a> and <a href="https://glyphanalytics.com/school-food/">launch the School Food Impact Lab</a>. A public interactive demonstration of the full Pinpoint → Track → Adjust → Verify loop. It locates the binding constraint (in the simulated data, 78% of students who taste the plant-based meal like it, but it is available at service only 40% of the time), tracks school-level availability and selection monthly, turns barriers into owner-assigned actions, and tests gains against synthetic-control comparisons with sensitivity checks and greenhouse-gas uncertainty.<br><br><strong>Career signal:</strong> Designing the operating loop a decision science team runs, from finding the constraint to verified impact.<br><br><strong>Status:</strong> Public interactive demonstration and case study; example data are simulated.</td>
-</tr></table>
-
-### 03 · GeoEvidence — Spatial Prediction & Validation
-
-<table><tr>
-<td width="48%" valign="top"><a href="projects/spatial-validation/README.md"><img src="projects/spatial-validation/assets/transfer-effects.svg" alt="Actual geographic transfer validation results with estimates and uncertainty" width="100%"></a><br><sub>Actual project output: geographic transfer and uncertainty validation.</sub></td>
-<td valign="top"><strong>Geospatial ML · Environmental intelligence · Research</strong><br><br><a href="projects/spatial-validation/README.md">Explore the research case study</a>. A 23-county GIS and spatial-ML workflow uses temporal and whole-county holdouts, observer-effort correction, and a proximity-only null to distinguish generalizable signal from geographic leakage. It reports positive, uncertain, and contrary findings.<br><br><a href="projects/spatial-validation/assets/workflow.svg">See the real validation workflow →</a><br><br><strong>Career signal:</strong> Spatial prediction evaluated against defensible out-of-sample evidence.<br><br><strong>Status:</strong> Documented research case study; v1.0 results under revision after a pipeline audit; corrected manuscript in preparation (co-author).</td>
-</tr></table>
-
-### 04 · Glyph Evidence — Traceable AI-Assisted Evaluation
-
-<table><tr>
-<td width="38%" valign="top"><strong>Evaluation workflow</strong><br><br>Sources → evaluation questions → themes and coding → theory-of-change tests → triangulated findings → cited report.</td>
-<td valign="top"><strong>LLM applications · Human-in-the-loop AI · Evaluation</strong><br><br>A local-first application that ties every finding, conclusion and recommendation to the exact passages behind it, across documents, spreadsheets and interview recordings. AI drafts themes, theory-of-change links and findings. Each quotation is checked character for character against its source, unsearched questions are reported as "not yet examined" rather than "no evidence," and nothing is confirmed until an evaluator reviews it. Related <a href="https://github.com/klovelace/AssessorWorkflow">AI Evaluation Operations prototypes</a> cover rubric-based assessment and rater calibration.<br><br><strong>Career signal:</strong> AI deployed in a high-stakes workflow with verification and human oversight built in.<br><br><strong>Status:</strong> Working application with an automated test suite and a synthetic sample project.</td>
-</tr></table>
-
-### 05 · Veiled Vote — Mechanism Design & Institutional AI
-
-<table><tr>
-<td width="46%" valign="top"><a href="projects/veiled-vote/README.md"><img src="projects/veiled-vote/assets/panel-sensitivity.svg" alt="Actual synthetic simulation results: citizen panel accuracy rose as panel size increased" width="100%"></a><br><sub>Original visualization of recorded adversarial simulation outputs.</sub></td>
-<td valign="top"><strong>Multi-agent simulation · AI governance · Game theory</strong><br><br><a href="projects/veiled-vote/README.md">Explore the simulation research case study</a>. Sequential experiments test receipt-free preference reports, veiled elicitation, adaptive strategic agents, and attacks on institutional safeguards. A tougher adversarial test found that enlarging vignette banks did not substantially improve accuracy, while larger simulated citizen panels were more resilient under the modeled assumptions.<br><br><strong>Career signal:</strong> Iterative computational research that exposes failed hypotheses, adversarial adaptation, and institutional tradeoffs.<br><br><strong>Status:</strong> Exploratory simulation study with three published charts. Hybrid institutional design is the next hypothesis.</td>
-</tr></table>
-
 ## Additional engineering & research
 
 | Project | Demonstrated work |
@@ -83,16 +82,7 @@ Five projects, ranked by their relevance to decision science leadership roles. E
 | **[Practice Mark](https://github.com/klovelace/practice-mark)** | Shipped unlisted Chrome extension beta for hands-free YouTube practice loops, marks, and playback controls. [Real-product screenshot capture plan](https://github.com/klovelace/practice-mark/blob/main/docs/PORTFOLIO_VISUALS.md). |
 | **[AI Evaluation Operations](https://github.com/klovelace/AssessorWorkflow)** | Three independent interactive prototypes for scoring rubrics, rater calibration, and evaluation-operations health; illustrative data, not live operations. |
 | **[Monitoring Tools Compendium](https://github.com/klovelace/MonitoringTools)** | Historical reference collection of monitoring frameworks, surveys, and indicator resources for international development. |
-
-## Selected analytical demonstrations
-
-These are independent analytical product demonstrations, not claims of employment, sponsorship, or live client deployment.
-
-| Demonstration | Decision problem |
-| --- | --- |
-| [Marketing incrementality and lifetime value](https://glyphanalytics.com/portfolio/marketing_ds_dashboard.html) | Separate incremental impact from attribution when allocating resources. |
-| [Growth journey analytics](https://glyphanalytics.com/portfolio/stripe_journey_dashboard.html) | Identify conversion friction and prioritize experiments. |
-| [Consumer growth and experimentation](https://glyphanalytics.com/HumanEval/reddit_consumer_ds_dashboard.html) | Connect retention, acquisition, and experimental evidence to product decisions. |
+| **[Veiled Vote](projects/veiled-vote/README.md)** | Exploratory multi-agent simulation of receipt-free preference elicitation and adversarial attacks on institutional safeguards, with three published charts. |
 
 ## Methods & tools
 
